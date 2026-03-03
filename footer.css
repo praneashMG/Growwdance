@@ -1,0 +1,6 @@
+[data-theme="dark"] footer a,
+[data-theme="dark"] footer p,
+[data-theme="dark"] footer h3,
+[data-theme="dark"] footer span  {
+  color: #4B0082 !important;
+}

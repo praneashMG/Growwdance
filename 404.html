@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 - Groww Dance</title>
+<link rel="icon" href="images/logo.jpeg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<script>
+tailwind.config = { darkMode: 'class' }
+</script>
+
+<style>
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+.float { animation: float 3s ease-in-out infinite; }
+
+.glow {
+  text-shadow: 0 0 25px rgba(123,44,191,0.6);
+}
+</style>
+
+</head>
+
+<body class="h-full flex items-center justify-center 
+bg-gradient-to-br from-[#F3ECFF] to-[#E9D8FD]
+dark:from-[#0f0a1f] dark:to-[#1a0b2e]
+transition-colors duration-500">
+
+<div class="text-center px-6 relative">
+
+<!-- Decorative Icons -->
+<div class="absolute top-10 left-10 text-4xl text-[#7B2CBF] float">
+<i class="bi bi-music-note-beamed"></i>
+</div>
+
+<div class="absolute bottom-10 right-10 text-4xl text-[#9D4EDD] float" style="animation-delay:1s;">
+<i class="bi bi-stars"></i>
+</div>
+
+<div class="absolute top-1/2 left-5 text-3xl text-[#7B2CBF]/60 float" style="animation-delay:0.5s;">
+<i class="bi bi-cursor-fill"></i>
+</div>
+
+<!-- Main Icon -->
+<div class="float mb-6">
+<i class="bi bi-exclamation-triangle-fill text-7xl text-[#7B2CBF] dark:text-white glow"></i>
+</div>
+
+<!-- 404 Text -->
+<h1 class="text-6xl font-bold text-[#7B2CBF] dark:text-white glow">
+404
+</h1>
+
+<h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-300 mt-3">
+Oops! Dance Floor Not Found
+</h2>
+
+<p class="text-gray-600 dark:text-gray-400 mt-4 max-w-md mx-auto">
+The page you are looking for has left the stage.  
+Let’s get back to the rhythm.
+</p>
+
+<!-- Buttons -->
+<div class="justify-center gap-4 mt-8">
+
+<a href="index.html"
+class="bg-[#7B2CBF] hover:bg-[#5a1e8f] text-white px-6 py-3 rounded-xl 
+font-semibold shadow-lg transition transform hover:scale-105">
+<i class="bi bi-house-door-fill mr-2"></i> Home
+</a>
+
+</div>
+
+</div>
+
+<script>
+function toggleTheme(){
+document.documentElement.classList.toggle("dark");
+const icon=document.getElementById("themeIcon");
+if(document.documentElement.classList.contains("dark")){
+icon.className="bi bi-sun-fill mr-2";
+}else{
+icon.className="bi bi-moon-fill mr-2";
+}
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Groww Dance</title>
+    <link rel="icon" href="images/logo.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* RTL */
+        .rtl {
+            direction: rtl;
+        }
+
+        [dir="rtl"] .title {
+            margin-right: 20px !important;
+        }
+
+        /* THEME TOGGLE */
+        :root {
+            --home-bg: #ffffff;
+            --text-color: #111111;
+        }
+
+        [data-theme="dark"] {
+            --home-bg: #000000;
+            --text-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--home-bg) !important;
+            color: var(--text-color);
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        [data-theme="dark"] section,
+        [data-theme="dark"] .card {
+            background-color: #000000 !important;
+        }
+
+        [data-theme="dark"] .btn,
+        [data-theme="dark"] .btn1:hover {
+            color: #000000 !important;
+        }
+
+        [data-theme="dark"] body,
+        [data-theme="dark"] p,
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] h5,
+        [data-theme="dark"] h6,
+        [data-theme="dark"] span,
+        [data-theme="dark"] li,
+        [data-theme="dark"] a,
+        [data-theme="dark"] label,
+        [data-theme="dark"] small,
+        [data-theme="dark"] strong,
+        [data-theme="dark"] .title{
+            color: #ffffff !important;
+        }
+
+        @media (max-width:821px) {
+            .title {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <!-- navbar -->
+    <div id="navbar"></div>
+    <!-- HERO BANNER -->
+    <!-- Bootstrap Icons CDN (Add in <head> if not added) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <section class="relative h-[90vh] bg-gradient-to-br from-[#4B0082] via-[#7B2CBF] to-[#9D4EDD] 
+text-white flex items-center justify-center overflow-hidden">
+
+        <!-- Floating Decorative Icons -->
+        <div class="absolute top-20 left-20 text-white/20 text-6xl animate-bounce">
+            <i class="bi bi-music-note-beamed"></i>
+        </div>
+
+        <div class="absolute bottom-20 right-20 text-white/20 text-6xl animate-pulse">
+            <i class="bi bi-envelope-heart-fill"></i>
+        </div>
+
+        <div class="absolute top-1/3 right-10 text-white/20 text-5xl animate-bounce">
+            <i class="bi bi-chat-dots-fill"></i>
+        </div>
+
+        <!-- Main Content -->
+        <div class="text-center px-6 max-w-3xl">
+
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Let’s Connect & <br class="hidden md:block">
+                Start Your Dance Journey
+            </h1>
+
+            <p class="text-lg md:text-xl text-white/90 mb-8">
+                Questions about classes, schedules, competitions, or registrations?
+                Reach out and we’ll help you step into the spotlight.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+                <a href="#contact-form" class="btn bg-white text-[#4B0082] px-8 py-3 rounded-xl 
+               font-semibold shadow-lg hover:scale-105 transition duration-300">
+                    <i class="bi bi-send-fill mr-2"></i> Send Message
+                </a>
+
+                <a href="tel:+911234567890" class="btn1 border border-white px-8 py-3 rounded-xl 
+               font-semibold hover:bg-white hover:text-[#4B0082] 
+               transition duration-300">
+                    <i class="bi bi-telephone-fill mr-2"></i> Call Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- SECTION1 -->
+    <section id="contact-form" class="py-20 bg-[#F5F3FF]">
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
+
+            <!-- LEFT: Contact Form -->
+            <div class="card bg-white p-10 rounded-2xl shadow-xl border border-white">
+
+                <h2 class="text-3xl font-bold text-[#4B0082] mb-6">
+                    Send Us a Message
+                </h2>
+
+                <form class="space-y-6">
+
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Full Name</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-3 
+                           focus:ring-2 focus:ring-[#7B2CBF] focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email Address</label>
+                        <input type="email" class="w-full border border-gray-300 rounded-lg px-4 py-3 
+                           focus:ring-2 focus:ring-[#7B2CBF] focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Phone Number</label>
+                        <input type="tel" class="w-full border border-gray-300 rounded-lg px-4 py-3 
+                           focus:ring-2 focus:ring-[#7B2CBF] focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message</label>
+                        <textarea rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-3 
+                              focus:ring-2 focus:ring-[#7B2CBF] focus:outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-[#4B0082] text-white py-3 rounded-lg 
+                        font-semibold hover:bg-[#360062] transition">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- RIGHT: Studio Information -->
+            <div class="space-y-8">
+
+                <!-- Address -->
+                <div class="card bg-white p-8 rounded-2xl shadow-lg flex items-start gap-4 mt-8">
+                    <i class="bi bi-geo-alt-fill text-[#4B0082] text-2xl"></i>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">Studio Address</h3>
+                        <p class="text-gray-600">
+                            123 Dance Street, Whitefield, Bangalore, Karnataka
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Working Hours -->
+                <div class="card bg-white p-8 rounded-2xl shadow-lg flex items-start gap-4">
+                    <i class="bi bi-clock-fill text-[#4B0082] text-2xl"></i>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">Working Hours</h3>
+                        <p class="text-gray-600">
+                            Monday – Saturday <br>
+                            9:00 AM – 8:00 PM
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="card bg-white p-8 rounded-2xl shadow-lg flex items-start gap-4">
+                    <i class="bi bi-telephone-fill text-[#4B0082] text-2xl"></i>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">Contact Number</h3>
+                        <p class="text-gray-600">
+                            +91 98765 43210
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Email (NEW 4th Card) -->
+                <div class="card bg-white p-8 rounded-2xl shadow-lg flex items-start gap-4">
+                    <i class="bi bi-envelope-fill text-[#4B0082] text-2xl"></i>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">Email Support</h3>
+                        <p class="text-gray-600">
+                            info@dancestudio.com
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- SECTION2 -->
+    <!-- Bootstrap Icons (if not added already) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <section class="py-20 bg-[#F5F3FF]">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#4B0082]">
+                    Find Us & Experience the Studio
+                </h2>
+                <p class="text-gray-600 mt-4">
+                    Visit our studio and feel the rhythm in a vibrant learning space.
+                </p>
+            </div>
+
+            <!-- Split Layout -->
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+                <!-- LEFT: Google Map -->
+                <div class="rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Whitefield,Bangalore&output=embed" width="100%"
+                        height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+
+                <!-- RIGHT: Studio Image -->
+                <div>
+
+                    <img src="images/img7.jpg" alt="Dance Studio Interior"
+                        class="rounded-2xl shadow-2xl w-full h-[450px] object-cover">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- SECTION3 -->
+    <section class="py-20 bg-white">
+
+        <div class="max-w-4xl mx-auto px-6">
+
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#4B0082]">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-gray-600 mt-4">
+                    Find answers to common questions about our classes, competitions, and registration process.
+                </p>
+            </div>
+
+            <!-- Accordion -->
+            <div class="space-y-4">
+
+                <!-- Item 1 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleFAQ(1)"
+                        class="w-full flex justify-between items-center p-5 text-left font-semibold">
+                        How do I register for dance classes?
+                        <i id="icon1" class="bi bi-plus-lg transition-transform"></i>
+                    </button>
+                    <div id="faq1" class="title hidden px-5 pb-5 text-gray-600">
+                        You can register through our student dashboard.
+                        New students must complete the registration form and sign the waiver online.
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleFAQ(2)"
+                        class="w-full flex justify-between items-center p-5 text-left font-semibold">
+                        Do you offer competition team programs?
+                        <i id="icon2" class="bi bi-plus-lg transition-transform"></i>
+                    </button>
+                    <div id="faq2" class="title hidden px-5 pb-5 text-gray-600">
+                        Yes, we have a dedicated competition team portal for routines,
+                        costumes, schedules, and travel forms.
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleFAQ(3)"
+                        class="w-full flex justify-between items-center p-5 text-left font-semibold">
+                        Can I track attendance history?
+                        <i id="icon3" class="bi bi-plus-lg transition-transform"></i>
+                    </button>
+                    <div id="faq3" class="title hidden px-5 pb-5 text-gray-600">
+                        Yes, students can log in to their dashboard to view class attendance,
+                        payment history, and progress reports.
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleFAQ(4)"
+                        class="w-full flex justify-between items-center p-5 text-left font-semibold">
+                        What age groups do you accept?
+                        <i id="icon4" class="bi bi-plus-lg transition-transform"></i>
+                    </button>
+                    <div id="faq4" class="title hidden px-5 pb-5 text-gray-600">
+                        We offer programs for kids (4+), teens, and adults across various dance styles.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        function toggleFAQ(num) {
+            const content = document.getElementById("faq" + num);
+            const icon = document.getElementById("icon" + num);
+
+            content.classList.toggle("hidden");
+
+            if (content.classList.contains("hidden")) {
+                icon.classList.remove("bi-dash-lg");
+                icon.classList.add("bi-plus-lg");
+            } else {
+                icon.classList.remove("bi-plus-lg");
+                icon.classList.add("bi-dash-lg");
+            }
+        }
+    </script>
+    <!-- FOOTER -->
+    <div id="footer"></div>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+                    },
+                },
+            },
+        }
+    </script>
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+</body>
+
+</html>

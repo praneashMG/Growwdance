@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home2 - Groww Dance</title>
+    <link rel="icon" href="images/logo.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* RTL */
+        .rtl {
+            direction: rtl;
+        }
+
+        [dir="rtl"] .title {
+            margin-right: 20px !important;
+        }
+
+        /* THEME TOGGLE */
+        :root {
+            --home-bg: #ffffff;
+            --text-color: #111111;
+        }
+
+        [data-theme="dark"] {
+            --home-bg: #000000;
+            --text-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--home-bg) !important;
+            color: var(--text-color);
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        [data-theme="dark"] section,
+        [data-theme="dark"] .card {
+            background-color: #000000 !important;
+        }
+
+        [data-theme="dark"] .btn,
+        [data-theme="dark"] .btn1:hover {
+            color: #000000 !important;
+        }
+
+        [data-theme="dark"] body,
+        [data-theme="dark"] p,
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] h5,
+        [data-theme="dark"] h6,
+        [data-theme="dark"] span,
+        [data-theme="dark"] li,
+        [data-theme="dark"] a,
+        [data-theme="dark"] label,
+        [data-theme="dark"] small,
+        [data-theme="dark"] strong,
+        [data-theme="dark"] .title {
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <!-- navbar -->
+    <div id="navbar"></div>
+    <!-- HERO BANNER -->
+    <section class="relative h-[95vh] flex items-center justify-center text-center">
+
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="images/bg2.avif" alt="Dance Studio" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative max-w-4xl mx-auto px-6 text-white">
+
+            <!-- Heading -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight"
+                style="font-family: 'Playfair Display', serif;">
+                Move With Passion. <br>
+                Dance With Confidence.
+            </h1>
+
+            <!-- Sub Text -->
+            <p class="text-lg md:text-xl text-gray-200 mb-10">
+                Professional dance training for kids and adults.
+                Discover rhythm, creativity, and performance excellence
+                in a vibrant studio environment.
+            </p>
+
+            <!-- Play Button -->
+            <div class="flex justify-center mb-10">
+                <div class="flex flex-col items-center gap-4 cursor-pointer group">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition duration-300">
+                        <i class="bi bi-play-fill text-[#7C3AED] text-3xl"></i>
+                    </div>
+                    <span class="text-white font-medium tracking-wide">
+                        Watch Our Studio
+                    </span>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-8 max-w-md mx-auto text-white">
+
+                <div>
+                    <h3 class="text-3xl font-bold text-[#C4B5FD]">10+</h3>
+                    <p class="text-sm">Years Experience</p>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-bold text-[#C4B5FD]">500+</h3>
+                    <p class="text-sm">Happy Students</p>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-bold text-[#C4B5FD]">25+</h3>
+                    <p class="text-sm">Awards Won</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SECTION1 -->
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <!-- Section Heading -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#4C1D95]"
+                    style="font-family: 'Playfair Display', serif;">
+                    Our Dance Programs
+                </h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    Explore a variety of dance styles designed for kids and adults at every level.
+                </p>
+            </div>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Card 1 -->
+                <div class="card group bg-[#F9FAFB] rounded-2xl overflow-hidden
+              shadow-sm hover:shadow-2xl
+              transition-all duration-500
+              hover:-translate-y-3
+              hover:ring-2 hover:ring-[#7C3AED]/40">
+
+                    <div class="overflow-hidden">
+                        <img src="images/dance1.avif" class="w-full h-56 object-cover
+                  transition-transform duration-500
+                  group-hover:scale-110" alt="Hip Hop">
+                    </div>
+
+                    <div class="p-6 text-center">
+                        <h3 class="text-lg font-semibold text-[#4C1D95] mb-3
+                 transition-colors duration-300
+                 group-hover:text-[#7C3AED]">
+                            Hip Hop
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Energetic, freestyle movements that build rhythm and confidence.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card group bg-[#F9FAFB] rounded-2xl overflow-hidden
+              shadow-sm hover:shadow-2xl
+              transition-all duration-500
+              hover:-translate-y-3
+              hover:ring-2 hover:ring-[#7C3AED]/40">
+
+                    <div class="overflow-hidden">
+                        <img src="images/pic3.avif" class="w-full h-56 object-cover
+                  transition-transform duration-500
+                  group-hover:scale-110" alt="Contemporary">
+                    </div>
+
+                    <div class="p-6 text-center">
+                        <h3 class="text-lg font-semibold text-[#4C1D95] mb-3
+                 transition-colors duration-300
+                 group-hover:text-[#7C3AED]">
+                            Contemporary
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Expressive and emotional style combining technique and creativity.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card group bg-[#F9FAFB] rounded-2xl overflow-hidden
+              shadow-sm hover:shadow-2xl
+              transition-all duration-500
+              hover:-translate-y-3
+              hover:ring-2 hover:ring-[#7C3AED]/40">
+
+                    <div class="overflow-hidden">
+                        <img src="images/dance2.avif" class="w-full h-56 object-cover
+                  transition-transform duration-500
+                  group-hover:scale-110" alt="Classical">
+                    </div>
+
+                    <div class="p-6 text-center">
+                        <h3 class="text-lg font-semibold text-[#4C1D95] mb-3
+                 transition-colors duration-300
+                 group-hover:text-[#7C3AED]">
+                            Classical
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Traditional techniques that build discipline and grace.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card group bg-[#F9FAFB] rounded-2xl overflow-hidden
+              shadow-sm hover:shadow-2xl
+              transition-all duration-500
+              hover:-translate-y-3
+              hover:ring-2 hover:ring-[#7C3AED]/40">
+
+                    <div class="overflow-hidden">
+                        <img src="images/dance3.avif" class="w-full h-56 object-cover
+                  transition-transform duration-500
+                  group-hover:scale-110" alt="Zumba">
+                    </div>
+
+                    <div class="p-6 text-center">
+                        <h3 class="text-lg font-semibold text-[#4C1D95] mb-3
+                 transition-colors duration-300
+                 group-hover:text-[#7C3AED]">
+                            Zumba
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                            Fun fitness dance sessions that keep you active and energized.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- SECTION2 -->
+    <section class="py-24 bg-[#F3F4F6] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+
+                <!-- Image (Now Right on Desktop) -->
+                <div class="w-full lg:w-1/2 group overflow-hidden rounded-3xl">
+                    <img src="images/bg6.webp" alt="About Dance Studio" class="w-full h-[350px] md:h-[450px] object-cover 
+                rounded-3xl shadow-2xl
+                transition-transform duration-700 ease-in-out
+                group-hover:scale-110">
+                </div>
+
+                <!-- Content Card -->
+                <div class="card w-full lg:w-1/2 bg-white p-10 md:p-14 rounded-3xl shadow-2xl">
+
+                    <span class="text-sm font-semibold text-[#7C3AED] tracking-widest uppercase">
+                        About Our Studio
+                    </span>
+
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#111827] mt-4 mb-6 leading-snug">
+                        Where Passion Meets Performance
+                    </h2>
+
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        We are a creative dance academy dedicated to building confidence,
+                        discipline, and artistic expression. Our professional trainers guide
+                        students through structured learning while encouraging individuality.
+                    </p>
+
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        From beginners to advanced performers, we nurture every dancer with
+                        personalized attention and stage exposure opportunities.
+                    </p>
+
+                    <!-- Highlight Points -->
+                    <div class="title grid grid-cols-2 gap-4 text-sm text-gray-700">
+                        <div>✔ Professional Trainers</div>
+                        <div>✔ Modern Studio Space</div>
+                        <div>✔ Stage Opportunities</div>
+                        <div>✔ Flexible Timings</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- SECTION3 -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+
+            <!-- Heading -->
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#4C1D95] mb-4"
+                    style="font-family: 'Playfair Display', serif;">
+                    Upcoming Events
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Join our exciting workshops, competitions, and stage performances.
+                </p>
+            </div>
+
+            <div class="space-y-10">
+
+                <!-- Card 1 -->
+                <div class="card group flex flex-col md:flex-row bg-[#F9FAFB] rounded-2xl overflow-hidden
+                  shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+
+                    <!-- Image -->
+                    <div class="md:w-1/3 overflow-hidden">
+                        <img src="images/img4.webp" class="w-full h-64 md:h-full object-cover
+                      transition-transform duration-500
+                      group-hover:scale-110" alt="Hip Hop Workshop">
+                    </div>
+
+                    <!-- Content -->
+                    <div class="md:w-2/3 p-8 flex flex-col justify-center">
+                        <span class="text-xs font-semibold text-white bg-[#7C3AED] px-3 py-1 rounded-full w-fit">
+                            March 12, 2026
+                        </span>
+
+                        <h3 class="text-2xl font-semibold text-[#111827] mt-4 mb-3">
+                            Hip Hop Masterclass
+                        </h3>
+
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Learn advanced freestyle techniques and performance confidence
+                            from our professional trainers.
+                        </p>
+
+                        <p class="text-sm font-medium text-[#7C3AED] cursor-pointer">
+                            View Details →
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Card 2 -->
+                <div class="card group flex flex-col md:flex-row bg-[#F9FAFB] rounded-2xl overflow-hidden
+                  shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+
+                    <div class="md:w-1/3 overflow-hidden">
+                        <img src="images/img5.webp" class="w-full h-64 md:h-full object-cover
+                      transition-transform duration-500
+                      group-hover:scale-110" alt="Dance Competition">
+                    </div>
+
+                    <div class="md:w-2/3 p-8 flex flex-col justify-center">
+                        <span class="text-xs font-semibold text-white bg-[#7C3AED] px-3 py-1 rounded-full w-fit">
+                            April 5, 2026
+                        </span>
+
+                        <h3 class="text-2xl font-semibold text-[#111827] mt-4 mb-3">
+                            Annual Dance Competition
+                        </h3>
+
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Showcase your talent and compete with dancers from across the city.
+                        </p>
+
+                        <p class="text-sm font-medium text-[#7C3AED] cursor-pointer">
+                            View Details →
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Card 3 -->
+                <div class="card group flex flex-col md:flex-row bg-[#F9FAFB] rounded-2xl overflow-hidden
+                  shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+
+                    <div class="md:w-1/3 overflow-hidden">
+                        <img src="images/img6.avif" class="w-full h-64 md:h-full object-cover
+                      transition-transform duration-500
+                      group-hover:scale-110" alt="Stage Show">
+                    </div>
+
+                    <div class="md:w-2/3 p-8 flex flex-col justify-center">
+                        <span class="text-xs font-semibold text-white bg-[#7C3AED] px-3 py-1 rounded-full w-fit">
+                            May 20, 2026
+                        </span>
+
+                        <h3 class="text-2xl font-semibold text-[#111827] mt-4 mb-3">
+                            Summer Stage Show
+                        </h3>
+
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Experience a spectacular evening of live dance performances.
+                        </p>
+
+                        <p class="text-sm font-medium text-[#7C3AED] cursor-pointer">
+                            View Details →
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- SECTION4 -->
+    <section class="py-24 bg-[#F3F4F6]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+
+            <!-- Heading -->
+            <h2 class="text-3xl md:text-4xl font-bold text-[#4C1D95] mb-12"
+                style="font-family: 'Playfair Display', serif;">
+                What Our Students Say
+            </h2>
+
+            <!-- Testimonial Card -->
+            <div class="card relative bg-white rounded-3xl shadow-2xl p-10 md:p-16 border border-white">
+
+                <!-- Big Quote Icon -->
+                <div class="absolute -top-8 left-1/2 -translate-x-1/2">
+                    <div
+                        class="bg-[#7C3AED] text-white text-4xl w-16 h-16 flex items-center justify-center rounded-full shadow-lg">
+                        “
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <p class="text-gray-600 text-lg leading-relaxed mt-6 mb-8">
+                    Joining this dance academy completely transformed my confidence.
+                    The trainers are supportive, the environment is motivating,
+                    and every performance feels magical. I’ve grown not just as a dancer,
+                    but as a person.
+                </p>
+
+                <!-- Profile -->
+                <div class="flex flex-col items-center">
+                    <img src="images/test1.avif" alt="Student"
+                        class="w-20 h-20 rounded-full object-cover mb-4 shadow-md">
+
+                    <h4 class="font-semibold text-[#111827]">
+                        Ayesha Sharma
+                    </h4>
+                    <span class="text-sm text-gray-500">
+                        Advanced Level Student
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- SECTION5 -->
+    <section class="relative bg-fixed bg-center bg-cover py-32" style="background-image: url('images/bg3.avif');">
+
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <div class="relative max-w-4xl mx-auto px-6 text-center text-white">
+
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                Step Into the Spotlight
+            </h2>
+
+            <p class="text-gray-200 text-lg md:text-xl mb-10 leading-relaxed">
+                Every great dancer starts with a single step.
+                Take yours today and transform your passion into performance.
+                Your stage is waiting.
+            </p>
+
+            <button onclick="window.location.href='sign.html'" class="bg-[#7C3AED] px-8 py-4 rounded-full font-semibold
+                     hover:bg-purple-700 transition duration-300">
+                Start Your Journey
+            </button>
+        </div>
+
+    </section>
+    <!-- FOOTER -->
+    <div id="footer"></div>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+                    },
+                },
+            },
+        }
+    </script>
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+</body>
+
+</html>

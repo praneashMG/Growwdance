@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Groww Dance</title>
+    <link rel="icon" href="images/logo.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+</head>
+
+<body class="bg-gray-100 dark:bg-[#0f0a1f] transition-colors duration-300 font-sans">
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- ================= OVERLAY ================= -->
+        <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-40 lg:hidden"></div>
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-72 bg-[#E9D8FD] text-[#4B0082] 
+flex flex-col transform -translate-x-full lg:translate-x-0 
+transition-transform duration-300 z-50">
+
+            <!-- Logo -->
+            <div class="p-6 text-2xl font-bold  flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-[#4B0082]">
+                    <a href="index.html" class="transition">
+                        Groww Dance
+                    </a>
+                </h1>
+                <button id="closeSidebar" class="lg:hidden text-xl">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-1 p-4 space-y-2 text-sm">
+
+                <a class="block px-4 py-3 rounded-xl bg-[#D6BCFA] font-semibold">
+                    <i class="bi bi-speedometer2 mr-2"></i> Dashboard
+                </a>
+
+                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition">
+                    <i class="bi bi-people-fill mr-2"></i> Students
+                </a>
+
+                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition">
+                    <i class="bi bi-calendar-check-fill mr-2"></i> Attendance
+                </a>
+
+                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition">
+                    <i class="bi bi-camera-video-fill mr-2"></i> Video Gallery
+                </a>
+
+                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition">
+                    <i class="bi bi-trophy-fill mr-2"></i> Competition Team
+                </a>
+
+                <a href="login.html" class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition">
+                    <i class="bi bi-box-arrow-left mr-2"></i> Logout
+                </a>
+
+            </nav>
+
+            <!-- Profile Section -->
+            <div class="p-5 border-t border-[#4B008220] flex items-center gap-3">
+
+                <img src="images/team1.avif" class="w-12 h-12 rounded-full border-2 border-[#4B0082]">
+
+                <div>
+                    <p class="font-semibold text-sm text-[#4B0082]">Admin User</p>
+                    <p class="text-xs text-[#4B008280]">Super Admin</p>
+                </div>
+
+            </div>
+
+        </aside>
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- TOPBAR -->
+            <header class="bg-white dark:bg-[#1a1a2e] shadow px-6 py-4 flex justify-between items-center">
+
+                <!-- HAMBURGER (Mobile Only) -->
+                <button id="openSidebar" class="lg:hidden text-2xl text-[#4B0082] dark:text-white">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <h1 class="text-xl font-bold text-[#4B0082] dark:text-white">
+                    Admin
+                </h1>
+
+                <div class="flex gap-3">
+
+                    <button id="themeBtn" class="px-3 py-2 rounded-lg border text-[#4B0082] dark:text-white">
+                        <i id="themeIcon" class="bi bi-moon-fill"></i>
+                    </button>
+
+                    <button id="rtlBtn" class="px-3 py-2 rounded-lg border text-[#4B0082] dark:text-white">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+
+                </div>
+            </header>
+
+            <!-- CONTENT -->
+            <main class="p-6 overflow-y-auto space-y-8">
+
+                <!-- BANNER -->
+                <div class="bg-gradient-to-r from-[#4B0082] to-[#9D4EDD]
+text-white p-6 rounded-2xl shadow">
+                    <h2 class="text-2xl font-bold">Welcome to Dance Studio <i class="bi bi-balloon-heart-fill"></i></h2>
+                    <p>Manage Students • Attendance • Videos • Competition Team</p>
+                </div>
+
+                <!-- STATS -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
+                        <i class="bi bi-people-fill text-2xl text-[#4B0082]"></i>
+                        <h2 class="text-3xl font-bold text-[#4B0082] dark:text-white mt-3">250</h2>
+                        <p class="dark:text-white text-sm">Total Students</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
+                        <i class="bi bi-music-note-beamed text-2xl text-[#4B0082]"></i>
+                        <h2 class="text-3xl font-bold text-[#4B0082] dark:text-white mt-3">14</h2>
+                        <p class="dark:text-white text-sm">Active Classes</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
+                        <i class="bi bi-calendar-check-fill text-2xl text-[#4B0082]"></i>
+                        <h2 class="text-3xl font-bold text-[#4B0082] dark:text-white mt-3">92%</h2>
+                        <p class="dark:text-white text-sm">Overall Attendance</p>
+
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded mt-3">
+                            <div class="bg-[#4B0082] h-2 rounded" style="width:92%"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
+                        <i class="bi bi-trophy-fill text-2xl text-[#4B0082]"></i>
+                        <h2 class="text-3xl font-bold text-[#4B0082] dark:text-white mt-3">34</h2>
+                        <p class="dark:text-white text-sm">Competition Members</p>
+                    </div>
+
+                </div>
+
+                <!-- WEEKLY GRAPH -->
+                <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
+
+                    <h2 class="text-lg font-bold mb-6 text-[#4B0082] dark:text-white">
+                        Weekly Attendance Graph
+                    </h2>
+
+                    <div class="h-48 flex items-end gap-3">
+
+                        <div class="flex-1 bg-[#4B008220] rounded-t-lg">
+                            <div class="bg-[#4B0082] h-24 rounded-t-lg"></div>
+                        </div>
+
+                        <div class="flex-1 bg-[#4B008220] rounded-t-lg">
+                            <div class="bg-[#4B0082] h-32 rounded-t-lg"></div>
+                        </div>
+
+                        <div class="flex-1 bg-[#4B008220] rounded-t-lg">
+                            <div class="bg-[#4B0082] h-40 rounded-t-lg"></div>
+                        </div>
+
+                        <div class="flex-1 bg-[#4B008220] rounded-t-lg">
+                            <div class="bg-[#4B0082] h-28 rounded-t-lg"></div>
+                        </div>
+
+                        <div class="flex-1 bg-[#4B008220] rounded-t-lg">
+                            <div class="bg-[#4B0082] h-36 rounded-t-lg"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ATTENDANCE BY CLASS -->
+                <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
+
+                    <h2 class="text-lg font-bold mb-6 text-[#4B0082] dark:text-white">
+                        Class Attendance Details
+                    </h2>
+
+                    <div class="space-y-5">
+
+                        <div>
+                            <div class="flex justify-between dark:text-white">
+                                <span>Ballet</span><span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded mt-1">
+                                <div class="bg-[#4B0082] h-2 rounded" style="width:85%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between dark:text-white">
+                                <span>Hip Hop</span><span>78%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded mt-1">
+                                <div class="bg-[#4B0082] h-2 rounded" style="width:78%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between dark:text-white">
+                                <span>Contemporary</span><span>88%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded mt-1">
+                                <div class="bg-[#4B0082] h-2 rounded" style="width:88%"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script>
+
+        // ===== SIDEBAR TOGGLE =====
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+        const openBtn = document.getElementById("openSidebar");
+        const closeBtn = document.getElementById("closeSidebar");
+
+        openBtn.onclick = () => {
+            sidebar.classList.remove("-translate-x-full");
+            overlay.classList.remove("hidden");
+        };
+
+        closeBtn.onclick = () => {
+            sidebar.classList.add("-translate-x-full");
+            overlay.classList.add("hidden");
+        };
+
+        overlay.onclick = () => {
+            sidebar.classList.add("-translate-x-full");
+            overlay.classList.add("hidden");
+        };
+
+        // ===== THEME TOGGLE =====
+        const themeBtn = document.getElementById("themeBtn");
+        const themeIcon = document.getElementById("themeIcon");
+
+        themeBtn.onclick = () => {
+            document.documentElement.classList.toggle("dark");
+            themeIcon.className =
+                document.documentElement.classList.contains("dark")
+                    ? "bi bi-sun-fill"
+                    : "bi bi-moon-fill";
+        };
+
+        // ===== RTL TOGGLE =====
+        document.getElementById("rtlBtn").onclick = () => {
+            document.documentElement.dir =
+                document.documentElement.dir === "rtl" ? "ltr" : "rtl";
+        };
+
+
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+                    },
+                },
+            },
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

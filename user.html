@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User - Groww Dance</title>
+    <link rel="icon" href="images/logo.jpeg">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+</head>
+
+<body class="bg-gray-100 dark:bg-[#0f0a1f] transition-colors duration-300 font-sans">
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- OVERLAY -->
+        <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-40 lg:hidden"></div>
+
+        <!-- SIDEBAR -->
+        <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-72 bg-[#E9D8FD] text-[#4B0082]
+flex flex-col transform -translate-x-full lg:translate-x-0
+transition-transform duration-300 z-50">
+
+            <div class="p-6 text-2xl font-bold flex justify-between">
+                <h1 class="text-2xl font-bold text-[#4B0082]">
+                    <a href="index.html" class="transition">
+                        Groww Dance
+                    </a>
+                </h1>
+                <button id="closeSidebar" class="lg:hidden">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+            <nav class="flex-1 p-4 space-y-2 text-sm">
+
+                <a class="block px-4 py-3 rounded-xl bg-[#D6BCFA] font-semibold">
+                    <i class="bi bi-house-fill mr-2"></i> Dashboard
+                </a>
+
+                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA]">
+                    <i class="bi bi-book-fill mr-2"></i> My Classes
+                </a>
+
+                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA]">
+                    <i class="bi bi-calendar-check-fill mr-2"></i> My Attendance
+                </a>
+
+                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA]">
+                    <i class="bi bi-trophy-fill mr-2"></i> Achievements
+                </a>
+
+                <a href="login.html" class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA]">
+                    <i class="bi bi-box-arrow-left mr-2"></i> Logout
+                </a>
+
+            </nav>
+
+            <div class="p-5 border-t border-[#4B008220] flex items-center gap-3">
+                <img src="images/test3.avif" class="w-12 h-12 rounded-full border-2 border-[#4B0082]">
+                <div>
+                    <p class="font-semibold text-sm">Anjali</p>
+                    <p class="text-xs text-[#4B008280]">Student</p>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- MAIN -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- TOPBAR -->
+            <header class="bg-white dark:bg-[#1a1a2e] shadow px-6 py-4 flex justify-between items-center">
+
+                <button id="openSidebar" class="lg:hidden text-2xl text-[#4B0082] dark:text-white">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <h1 class="text-xl font-bold text-[#4B0082] dark:text-white">
+                    User
+                </h1>
+
+                <div class="flex gap-3">
+
+                    <!-- Theme -->
+                    <button id="themeBtn" class="px-3 py-2 rounded-lg border text-[#4B0082] dark:text-white">
+                        <i id="themeIcon" class="bi bi-moon-fill"></i>
+                    </button>
+
+                    <!-- RTL -->
+                    <button id="rtlBtn" class="px-3 py-2 rounded-lg border text-[#4B0082] dark:text-white">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- CONTENT -->
+            <main class="p-6 space-y-8 overflow-y-auto">
+
+                <!-- WELCOME -->
+                <div class="bg-gradient-to-r from-[#4B0082] to-[#9D4EDD]
+text-white p-6 rounded-2xl shadow">
+                    <h2 class="text-2xl font-bold">Welcome Back, Anjali <i class="bi bi-balloon-heart-fill"></i></h2>
+                    <p>Track Classes • Attendance • Awards • Progress</p>
+                </div>
+
+                <!-- STATS -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
+                        <i class="bi bi-book-fill text-2xl text-[#4B0082]"></i>
+                        <h2 class="text-3xl font-bold dark:text-white mt-3">4</h2>
+                        <p class="dark:text-white text-sm">Enrolled Classes</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
+                        <i class="bi bi-calendar-check-fill text-2xl text-[#4B0082]"></i>
+                        <h2 class="text-3xl font-bold dark:text-white mt-3">92%</h2>
+                        <p class="dark:text-white text-sm">Attendance Rate</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
+                        <i class="bi bi-trophy-fill text-2xl text-[#4B0082]"></i>
+                        <h2 class="text-3xl font-bold dark:text-white mt-3">5</h2>
+                        <p class="dark:text-white text-sm">Total Awards</p>
+                    </div>
+
+                </div>
+                <!-- ATTENDANCE PROGRESS -->
+                <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
+                    <h2 class="text-lg font-bold mb-6 text-[#4B0082] dark:text-white"> My Attendance Progress </h2>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 h-3 rounded">
+                        <div class="bg-[#4B0082] h-3 rounded" style="width:92%"></div>
+                    </div>
+                    <p class="text-sm mt-2 dark:text-white">Excellent Performance</p>
+                </div>
+                <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
+                    <h2 class="text-lg font-bold mb-4 text-[#4B0082] dark:text-white"> Upcoming Class </h2>
+                    <div class="flex justify-between dark:text-white"> <span>Contemporary Dance</span> <span>Today 6:00
+                            PM</span> </div>
+                </div>
+                <!-- ================= ACHIEVEMENTS ================= -->
+                <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
+
+                    <h2 class="text-lg font-bold mb-6 text-[#4B0082] dark:text-white">
+                        My Achievements
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                        <div class="text-center border p-4 rounded-xl border-[#4B008220]">
+                            <i class="bi bi-trophy-fill text-3xl text-yellow-500"></i>
+                            <h3 class="font-semibold mt-3 dark:text-white">Best Performer</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-300">Annual Festival</p>
+                        </div>
+
+                        <div class="text-center border p-4 rounded-xl border-[#4B008220]">
+                            <i class="bi bi-star-fill text-3xl text-[#4B0082]"></i>
+                            <h3 class="font-semibold mt-3 dark:text-white">Excellence Award</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-300">Studio Level</p>
+                        </div>
+
+                        <div class="text-center border p-4 rounded-xl border-[#4B008220]">
+                            <i class="bi bi-award-fill text-3xl text-green-600"></i>
+                            <h3 class="font-semibold mt-3 dark:text-white">Participation</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-300">Competition Event</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+
+        /* Sidebar */
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+
+        document.getElementById("openSidebar").onclick = () => {
+            sidebar.classList.remove("-translate-x-full");
+            overlay.classList.remove("hidden");
+        };
+
+        document.getElementById("closeSidebar").onclick = () => {
+            sidebar.classList.add("-translate-x-full");
+            overlay.classList.add("hidden");
+        };
+
+        overlay.onclick = () => {
+            sidebar.classList.add("-translate-x-full");
+            overlay.classList.add("hidden");
+        };
+
+        /* Theme */
+        const themeBtn = document.getElementById("themeBtn");
+        const themeIcon = document.getElementById("themeIcon");
+
+        themeBtn.onclick = () => {
+            document.documentElement.classList.toggle("dark");
+            themeIcon.className =
+                document.documentElement.classList.contains("dark")
+                    ? "bi bi-sun-fill"
+                    : "bi bi-moon-fill";
+        };
+
+        /* RTL */
+        document.getElementById("rtlBtn").onclick = () => {
+            document.documentElement.dir =
+                document.documentElement.dir === "rtl" ? "ltr" : "rtl";
+        };
+
+        
+
+tailwind.config = {
+    darkMode: 'class',
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+            },
+        },
+    },
+}
+
+
+
+    </script>
+
+</body>
+
+</html>

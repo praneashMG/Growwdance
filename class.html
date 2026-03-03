@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes - Groww Dance</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* RTL */
+    .rtl {
+      direction: rtl;
+    }
+
+    [dir="rtl"] .title {
+      margin-right: 20px !important;
+    }
+
+    /* THEME TOGGLE */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    [data-theme="dark"] section,
+    [data-theme="dark"] .card {
+      background-color: #000000 !important;
+    }
+
+    [data-theme="dark"] .btn,
+    [data-theme="dark"] .btn1:hover {
+      color: #000000 !important;
+    }
+
+    [data-theme="dark"] body,
+    [data-theme="dark"] p,
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6,
+    [data-theme="dark"] span,
+    [data-theme="dark"] li,
+    [data-theme="dark"] a,
+    [data-theme="dark"] label,
+    [data-theme="dark"] small,
+    [data-theme="dark"] strong {
+      color: #ffffff !important;
+    }
+
+    @media (max-width:821px) {
+      .title {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+  <!-- navbar -->
+  <div id="navbar"></div>
+  <!-- HERO BANNER -->
+  <section class="relative h-[90vh] flex items-center justify-center text-white overflow-hidden">
+
+    <!-- Background Image -->
+    <img src="images/bg6.webp" class="absolute inset-0 w-full h-full object-cover">
+
+    <!-- Violet Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#4B0082]/90 to-[#9D4EDD]/80"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center max-w-4xl px-6">
+
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        Explore Our Dance Classes
+      </h1>
+
+      <p class="text-lg md:text-xl mb-8 text-white/90">
+        From beginner to advanced levels — discover styles, improve skills,
+        and train with professional instructors in a vibrant environment.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+        <a href="classdetails.html"
+          class="btn bg-white text-[#4B0082] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+          View Classes
+        </a>
+
+        <a href="classdetails.html"
+          class="btn1 border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#4B0082] transition">
+          Learn More
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- SECTION1 -->
+  <section id="classes" class="py-24 bg-[#F5F3FF]">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Section Title -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#4B0082] mb-4">
+          Our Dance Programs
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          Choose your level and start learning with professional guidance.
+        </p>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div class="card border border-white bg-white rounded-2xl shadow-lg p-8 text-center
+                        hover:-translate-y-3 hover:shadow-2xl transition duration-500">
+
+          <i class="bi bi-person-fill text-4xl text-[#4B0082]"></i>
+
+          <h3 class="text-2xl font-bold mt-6 mb-3">Beginner Level</h3>
+
+          <p class="text-gray-600 mb-6">
+            Perfect for newcomers. Learn fundamentals,
+            posture, rhythm, and basic choreography.
+          </p>
+
+          <a href="classdetails.html" class="inline-block bg-[#4B0082] text-white px-6 py-2 rounded-full
+                          hover:bg-[#6B21A8] transition">
+            Learn More →
+          </a>
+
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card border border-white bg-white rounded-2xl shadow-lg p-8 text-center
+                        hover:-translate-y-3 hover:shadow-2xl transition duration-500">
+
+          <i class="bi bi-stars text-4xl text-[#4B0082]"></i>
+
+          <h3 class="text-2xl font-bold mt-6 mb-3">Intermediate Level</h3>
+
+          <p class="text-gray-600 mb-6">
+            Improve technique, flexibility and performance skills
+            with structured training.
+          </p>
+
+          <a href="classdetails.html" class="inline-block bg-[#4B0082] text-white px-6 py-2 rounded-full
+                          hover:bg-[#6B21A8] transition">
+            Learn More →
+          </a>
+
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card border border-white bg-white rounded-2xl shadow-lg p-8 text-center
+                        hover:-translate-y-3 hover:shadow-2xl transition duration-500 md:col-span-2 lg:col-span-1">
+
+          <i class="bi bi-trophy-fill text-4xl text-[#4B0082]"></i>
+
+          <h3 class="text-2xl font-bold mt-6 mb-3">Advanced Level</h3>
+
+          <p class="text-gray-600 mb-6">
+            Professional training for competitions,
+            shows, and high-level performances.
+          </p>
+
+          <a href="classdetails.html" class="inline-block bg-[#4B0082] text-white px-6 py-2 rounded-full
+                          hover:bg-[#6B21A8] transition">
+            Learn More →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- SECTION2 -->
+ <section class="py-24 bg-[#F5F3FF]">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Title -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-[#4B0082] mb-4">
+        Types of Dance We Offer
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+        Explore different dance styles and choose the one that matches your passion and personality.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+
+      <!-- Card Template -->
+      <div class="card border border-white w-64 h-64 bg-white rounded-full shadow-lg 
+                  flex flex-col items-center justify-center text-center
+                  hover:scale-105 hover:shadow-2xl transition duration-500 p-6">
+
+        <i class="bi bi-music-note-beamed text-4xl text-[#4B0082]"></i>
+        <h3 class="text-lg font-bold mt-4 mb-2">Ballet</h3>
+        <p class="text-sm text-gray-600">
+          Graceful classical technique and posture training.
+        </p>
+
+      </div>
+
+      <div class="card border border-white w-64 h-64 bg-white rounded-full shadow-lg 
+                  flex flex-col items-center justify-center text-center
+                  hover:scale-105 hover:shadow-2xl transition duration-500 p-6">
+
+        <i class="bi bi-lightning-charge-fill text-4xl text-[#4B0082]"></i>
+        <h3 class="text-lg font-bold mt-4 mb-2">Hip Hop</h3>
+        <p class="text-sm text-gray-600">
+          Energetic street style with powerful rhythm.
+        </p>
+
+      </div>
+
+      <div class="card border border-white w-64 h-64 bg-white rounded-full shadow-lg 
+                  flex flex-col items-center justify-center text-center
+                  hover:scale-105 hover:shadow-2xl transition duration-500 p-6">
+
+        <i class="bi bi-heart-fill text-4xl text-[#4B0082]"></i>
+        <h3 class="text-lg font-bold mt-4 mb-2">Contemporary</h3>
+        <p class="text-sm text-gray-600">
+          Expressive modern storytelling dance style.
+        </p>
+
+      </div>
+
+      <div class="card border border-white w-64 h-64 bg-white rounded-full shadow-lg 
+                  flex flex-col items-center justify-center text-center
+                  hover:scale-105 hover:shadow-2xl transition duration-500 p-6">
+
+        <i class="bi bi-flower1 text-4xl text-[#4B0082]"></i>
+        <h3 class="text-lg font-bold mt-4 mb-2">Classical</h3>
+        <p class="text-sm text-gray-600">
+          Traditional disciplined dance form.
+        </p>
+
+      </div>
+
+      <div class="card border border-white w-64 h-64 bg-white rounded-full shadow-lg 
+                  flex flex-col items-center justify-center text-center
+                  hover:scale-105 hover:shadow-2xl transition duration-500 p-6">
+
+        <i class="bi bi-people-fill text-4xl text-[#4B0082]"></i>
+        <h3 class="text-lg font-bold mt-4 mb-2">Folk</h3>
+        <p class="text-sm text-gray-600">
+          Cultural and traditional community dance.
+        </p>
+
+      </div>
+
+      <div class="card border border-white w-64 h-64 bg-white rounded-full shadow-lg 
+                  flex flex-col items-center justify-center text-center
+                  hover:scale-105 hover:shadow-2xl transition duration-500 p-6">
+
+        <i class="bi bi-trophy-fill text-4xl text-[#4B0082]"></i>
+        <h3 class="text-lg font-bold mt-4 mb-2">Competition</h3>
+        <p class="text-sm text-gray-600">
+          Advanced performance & stage training.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+  <!-- SECTION3 -->
+  <section class="py-24 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Title -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#4B0082] mb-4">
+          Meet Our Professional Instructors
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          Learn from experienced choreographers and certified dance professionals.
+        </p>
+      </div>
+
+      <!-- Instructor Cards -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <!-- Card -->
+        <div class="card border border-white bg-[#F5F3FF] rounded-2xl shadow-lg overflow-hidden
+                        hover:-translate-y-3 hover:shadow-2xl transition duration-500">
+
+          <div class="overflow-hidden">
+            <img src="images/team1.avif" class="w-full h-80 object-cover
+                                transition duration-700 hover:scale-110">
+          </div>
+
+          <div class="p-6 text-center">
+
+            <h3 class="text-2xl font-bold text-[#4B0082]">
+              Priya Sharma
+            </h3>
+
+            <p class="text-gray-600 mt-2">
+              Contemporary & Classical Dance Expert
+            </p>
+
+            <div class="flex justify-center gap-4 mt-4 text-xl text-[#4B0082]">
+              <i class="bi bi-facebook hover:text-[#6B21A8] cursor-pointer"></i>
+              <i class="bi bi-instagram hover:text-[#6B21A8] cursor-pointer"></i>
+              <i class="bi bi-linkedin hover:text-[#6B21A8] cursor-pointer"></i>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card border border-white bg-[#F5F3FF] rounded-2xl shadow-lg overflow-hidden
+                        hover:-translate-y-3 hover:shadow-2xl transition duration-500">
+
+          <div class="overflow-hidden">
+            <img src="images/team2.avif" class="w-full h-80 object-cover
+                                transition duration-700 hover:scale-110">
+          </div>
+
+          <div class="p-6 text-center">
+
+            <h3 class="text-2xl font-bold text-[#4B0082]">
+              Arjun Mehta
+            </h3>
+
+            <p class="text-gray-600 mt-2">
+              Hip-Hop & Street Style Trainer
+            </p>
+
+            <div class="flex justify-center gap-4 mt-4 text-xl text-[#4B0082]">
+              <i class="bi bi-facebook hover:text-[#6B21A8] cursor-pointer"></i>
+              <i class="bi bi-instagram hover:text-[#6B21A8] cursor-pointer"></i>
+              <i class="bi bi-youtube hover:text-[#6B21A8] cursor-pointer"></i>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card border border-white bg-[#F5F3FF] rounded-2xl shadow-lg overflow-hidden
+                        hover:-translate-y-3 hover:shadow-2xl transition duration-500 ">
+
+          <div class="overflow-hidden">
+            <img src="images/team3.avif" class="w-full h-80 object-cover
+                                transition duration-700 hover:scale-110">
+          </div>
+
+          <div class="p-6 text-center">
+
+            <h3 class="text-2xl font-bold text-[#4B0082]">
+              Meera Nair
+            </h3>
+
+            <p class="text-gray-600 mt-2">
+              Ballet & Performance Coach
+            </p>
+
+            <div class="flex justify-center gap-4 mt-4 text-xl text-[#4B0082]">
+              <i class="bi bi-facebook hover:text-[#6B21A8] cursor-pointer"></i>
+              <i class="bi bi-instagram hover:text-[#6B21A8] cursor-pointer"></i>
+              <i class="bi bi-twitter hover:text-[#6B21A8] cursor-pointer"></i>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- FOOTER -->
+  <div id="footer"></div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

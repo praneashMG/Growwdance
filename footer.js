@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div>
             <h1 class="text-2xl font-bold text-[#4B0082]">
       <a href="index.html" class="transition">
-        Groww Dance
+        Rhythm Hub
       </a>
     </h1>
 
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </li>
           <li class="flex items-center gap-2">
             <i class="bi bi-envelope-fill text-[#9333EA]"></i>
-            <span>info@rhythmdance.com</span>
+            <span>info@rhythmhub.com</span>
           </li>
         </ul>
       </div>
@@ -89,8 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 
   <!-- BOTTOM BAR -->
-  <div class="border-t border-[#D8B4FE] py-6 text-center text-[#6B21A8] text-xs px-4">
-    © ${new Date().getFullYear()} Groww Dance. All Rights Reserved.
+  <div class="title border-t border-[#D8B4FE] py-6 text-center text-[#6B21A8] text-xs px-4">
+    © ${new Date().getFullYear()} Rhythm Hub. All Rights Reserved.
   </div>
 
 </footer>

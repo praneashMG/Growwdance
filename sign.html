@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up - Groww Dance</title>
+  <title>Sign Up - Rhythm Hub</title>
   <link rel="icon" href="images/logo.jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,15 +17,20 @@
     }
 
     [data-theme="dark"] {
-      --home-bg: #0f0a1f;
+      --home-bg: #000000;
       --text-color: #fff;
     }
 
     [data-theme="dark"] .card {
-      background-color: #111;
+      background-color: #343434;
     }
-[data-theme="dark"] .title {
+
+    [data-theme="dark"] .title {
       color: white;
+    }
+
+    [data-theme="dark"] .navbar {
+      background-color: #414141;
     }
 
     body {
@@ -45,16 +50,16 @@
 <body class="font-sans">
 
   <!-- NAVBAR (SAME AS LOGIN) -->
-  <nav class="w-full bg-white shadow-md">
+  <nav class="navbar w-full bg-white shadow-md">
     <div class="max-w-4xl mx-auto px-6 flex items-center justify-between h-16">
 
       <h1 class="text-2xl font-bold text-[#4B0082]">
-        <a href="index.html">Groww Dance</a>
+        <a href="index.html" class="title">Rhythm Hub</a>
       </h1>
 
       <div class="flex gap-4 text-xl">
-        <button id="rtlToggle" class="text-[#4B0082]">⇄</button>
-        <button id="theme-toggle" class="text-[#4B0082]">
+        <button id="rtlToggle" class="text-[#4B0082] title">⇄</button>
+        <button id="theme-toggle" class="text-[#4B0082] title">
           <i class="bi bi-moon-fill"></i>
         </button>
       </div>
@@ -123,9 +128,12 @@
             <input type="email" placeholder="Email Address"
               class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#C8A2FF]" required>
 
-            <input type="password" placeholder="Password"
-              class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#C8A2FF]" required>
-
+            <div class="flex gap-4">
+              <input type="password" placeholder="Password"
+                class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
+              <input type="password" placeholder="Confirm Password"
+                class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-[#EC4899]" required>
+            </div>
             <div class="flex items-center gap-2 text-sm">
               <input type="checkbox" id="terms" class="accent-[#4B0082]" required>
               <label for="terms">I agree to Terms & Conditions</label>
@@ -212,14 +220,14 @@
         : '<i class="bi bi-moon-fill"></i>';
     }
     tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
-                    },
-                },
-            },
-        }
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
 
   </script>
 

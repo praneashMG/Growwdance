@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- Logo -->
     <h1 class="text-2xl font-bold text-[#4B0082]">
       <a href="index.html" class="transition">
-        Groww Dance
+        Rhythm Hub
       </a>
     </h1>
 

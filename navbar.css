@@ -193,13 +193,16 @@ body {
 #mobileMenu button {
   color: #CBD5E1 !important;
 }
- [data-theme="dark"] #mainNavbar a,
- [data-theme="dark"] #mainNavbar li,
- [data-theme="dark"] #hamburgerBtn i{
-  color: #4B0082 !important;
-}
+ 
 [data-theme="dark"] #homeDropdownMenu a,
 [data-theme="dark"] #dashboardDropdownMenu a,
-[data-theme="dark"] #profileMenu a{
+[data-theme="dark"] #profileMenu a,
+[data-theme="dark"] #mainNavbar button,
+[data-theme="dark"] #mainNavbar i{
   color: white !important;
+}
+
+[data-theme="dark"] #mainNavbar,
+[data-theme="dark"] #mobileMenu{
+  background-color: #29292a !important;
 }

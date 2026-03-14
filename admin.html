@@ -4,276 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Groww Dance</title>
+    <title>Admin - Rhythm Hub</title>
     <link rel="icon" href="images/logo.jpeg">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <script>
-        tailwind.config = { darkMode: 'class' }
-    </script>
-</head>
-
-<body class="bg-gray-100 dark:bg-[#0f0a1f] transition-colors duration-300 font-sans">
-
-    <div class="flex h-screen overflow-hidden">
-
-        <!-- ================= OVERLAY ================= -->
-        <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-40 lg:hidden"></div>
-
-        <!-- ================= SIDEBAR ================= -->
-        <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-72 bg-[#E9D8FD] text-[#4B0082] 
-flex flex-col transform -translate-x-full lg:translate-x-0 
-transition-transform duration-300 z-50">
-
-            <!-- Logo -->
-            <div class="p-6 text-2xl font-bold  flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-[#4B0082]">
-                    <a href="index.html" class="transition">
-                        Groww Dance
-                    </a>
-                </h1>
-                <button id="closeSidebar" class="lg:hidden text-xl">
-                    <i class="bi bi-x-lg"></i>
-                </button>
-            </div>
-
-            <!-- Navigation -->
-            <nav class="flex-1 p-4 space-y-2 text-sm">
-
-                <a class="block px-4 py-3 rounded-xl bg-[#D6BCFA] font-semibold">
-                    <i class="bi bi-speedometer2 mr-2"></i> Dashboard
-                </a>
-
-                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition">
-                    <i class="bi bi-people-fill mr-2"></i> Students
-                </a>
-
-                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition">
-                    <i class="bi bi-calendar-check-fill mr-2"></i> Attendance
-                </a>
-
-                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition">
-                    <i class="bi bi-camera-video-fill mr-2"></i> Video Gallery
-                </a>
-
-                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition">
-                    <i class="bi bi-trophy-fill mr-2"></i> Competition Team
-                </a>
-
-                <a href="login.html" class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition">
-                    <i class="bi bi-box-arrow-left mr-2"></i> Logout
-                </a>
-
-            </nav>
-
-            <!-- Profile Section -->
-            <div class="p-5 border-t border-[#4B008220] flex items-center gap-3">
-
-                <img src="images/team1.avif" class="w-12 h-12 rounded-full border-2 border-[#4B0082]">
-
-                <div>
-                    <p class="font-semibold text-sm text-[#4B0082]">Admin User</p>
-                    <p class="text-xs text-[#4B008280]">Super Admin</p>
-                </div>
-
-            </div>
-
-        </aside>
-
-        <!-- ================= MAIN CONTENT ================= -->
-        <div class="flex-1 flex flex-col">
-
-            <!-- TOPBAR -->
-            <header class="bg-white dark:bg-[#1a1a2e] shadow px-6 py-4 flex justify-between items-center">
-
-                <!-- HAMBURGER (Mobile Only) -->
-                <button id="openSidebar" class="lg:hidden text-2xl text-[#4B0082] dark:text-white">
-                    <i class="bi bi-list"></i>
-                </button>
-
-                <h1 class="text-xl font-bold text-[#4B0082] dark:text-white">
-                    Admin
-                </h1>
-
-                <div class="flex gap-3">
-
-                    <button id="themeBtn" class="px-3 py-2 rounded-lg border text-[#4B0082] dark:text-white">
-                        <i id="themeIcon" class="bi bi-moon-fill"></i>
-                    </button>
-
-                    <button id="rtlBtn" class="px-3 py-2 rounded-lg border text-[#4B0082] dark:text-white">
-                        <i class="bi bi-arrow-left-right"></i>
-                    </button>
-
-                </div>
-            </header>
-
-            <!-- CONTENT -->
-            <main class="p-6 overflow-y-auto space-y-8">
-
-                <!-- BANNER -->
-                <div class="bg-gradient-to-r from-[#4B0082] to-[#9D4EDD]
-text-white p-6 rounded-2xl shadow">
-                    <h2 class="text-2xl font-bold">Welcome to Dance Studio <i class="bi bi-balloon-heart-fill"></i></h2>
-                    <p>Manage Students • Attendance • Videos • Competition Team</p>
-                </div>
-
-                <!-- STATS -->
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
-                        <i class="bi bi-people-fill text-2xl text-[#4B0082]"></i>
-                        <h2 class="text-3xl font-bold text-[#4B0082] dark:text-white mt-3">250</h2>
-                        <p class="dark:text-white text-sm">Total Students</p>
-                    </div>
-
-                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
-                        <i class="bi bi-music-note-beamed text-2xl text-[#4B0082]"></i>
-                        <h2 class="text-3xl font-bold text-[#4B0082] dark:text-white mt-3">14</h2>
-                        <p class="dark:text-white text-sm">Active Classes</p>
-                    </div>
-
-                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
-                        <i class="bi bi-calendar-check-fill text-2xl text-[#4B0082]"></i>
-                        <h2 class="text-3xl font-bold text-[#4B0082] dark:text-white mt-3">92%</h2>
-                        <p class="dark:text-white text-sm">Overall Attendance</p>
-
-                        <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded mt-3">
-                            <div class="bg-[#4B0082] h-2 rounded" style="width:92%"></div>
-                        </div>
-
-                    </div>
-
-                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
-                        <i class="bi bi-trophy-fill text-2xl text-[#4B0082]"></i>
-                        <h2 class="text-3xl font-bold text-[#4B0082] dark:text-white mt-3">34</h2>
-                        <p class="dark:text-white text-sm">Competition Members</p>
-                    </div>
-
-                </div>
-
-                <!-- WEEKLY GRAPH -->
-                <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
-
-                    <h2 class="text-lg font-bold mb-6 text-[#4B0082] dark:text-white">
-                        Weekly Attendance Graph
-                    </h2>
-
-                    <div class="h-48 flex items-end gap-3">
-
-                        <div class="flex-1 bg-[#4B008220] rounded-t-lg">
-                            <div class="bg-[#4B0082] h-24 rounded-t-lg"></div>
-                        </div>
-
-                        <div class="flex-1 bg-[#4B008220] rounded-t-lg">
-                            <div class="bg-[#4B0082] h-32 rounded-t-lg"></div>
-                        </div>
-
-                        <div class="flex-1 bg-[#4B008220] rounded-t-lg">
-                            <div class="bg-[#4B0082] h-40 rounded-t-lg"></div>
-                        </div>
-
-                        <div class="flex-1 bg-[#4B008220] rounded-t-lg">
-                            <div class="bg-[#4B0082] h-28 rounded-t-lg"></div>
-                        </div>
-
-                        <div class="flex-1 bg-[#4B008220] rounded-t-lg">
-                            <div class="bg-[#4B0082] h-36 rounded-t-lg"></div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- ATTENDANCE BY CLASS -->
-                <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
-
-                    <h2 class="text-lg font-bold mb-6 text-[#4B0082] dark:text-white">
-                        Class Attendance Details
-                    </h2>
-
-                    <div class="space-y-5">
-
-                        <div>
-                            <div class="flex justify-between dark:text-white">
-                                <span>Ballet</span><span>85%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded mt-1">
-                                <div class="bg-[#4B0082] h-2 rounded" style="width:85%"></div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between dark:text-white">
-                                <span>Hip Hop</span><span>78%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded mt-1">
-                                <div class="bg-[#4B0082] h-2 rounded" style="width:78%"></div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between dark:text-white">
-                                <span>Contemporary</span><span>88%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded mt-1">
-                                <div class="bg-[#4B0082] h-2 rounded" style="width:88%"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </main>
-
-        </div>
-    </div>
-
-    <script>
-
-        // ===== SIDEBAR TOGGLE =====
-        const sidebar = document.getElementById("sidebar");
-        const overlay = document.getElementById("overlay");
-        const openBtn = document.getElementById("openSidebar");
-        const closeBtn = document.getElementById("closeSidebar");
-
-        openBtn.onclick = () => {
-            sidebar.classList.remove("-translate-x-full");
-            overlay.classList.remove("hidden");
-        };
-
-        closeBtn.onclick = () => {
-            sidebar.classList.add("-translate-x-full");
-            overlay.classList.add("hidden");
-        };
-
-        overlay.onclick = () => {
-            sidebar.classList.add("-translate-x-full");
-            overlay.classList.add("hidden");
-        };
-
-        // ===== THEME TOGGLE =====
-        const themeBtn = document.getElementById("themeBtn");
-        const themeIcon = document.getElementById("themeIcon");
-
-        themeBtn.onclick = () => {
-            document.documentElement.classList.toggle("dark");
-            themeIcon.className =
-                document.documentElement.classList.contains("dark")
-                    ? "bi bi-sun-fill"
-                    : "bi bi-moon-fill";
-        };
-
-        // ===== RTL TOGGLE =====
-        document.getElementById("rtlBtn").onclick = () => {
-            document.documentElement.dir =
-                document.documentElement.dir === "rtl" ? "ltr" : "rtl";
-        };
-
-
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -284,8 +21,436 @@ text-white p-6 rounded-2xl shadow">
                 },
             },
         }
+    </script>
+</head>
 
+<body class="bg-gray-100 dark:bg-[#0f0a1f] transition-colors duration-300 font-sans">
 
+    <div class="flex h-screen overflow-hidden">
+
+        <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-40 lg:hidden"></div>
+
+        <aside id="sidebar"
+            class="fixed lg:static inset-y-0 left-0 w-72 bg-[#E9D8FD] text-[#4B0082] flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50">
+
+            <div class="p-6 text-2xl font-bold flex justify-between">
+                <h1 class="text-2xl font-bold text-[#4B0082]">
+                    <a href="index.html" class="transition">
+                        Rhythm Hub
+                    </a>
+                </h1>
+                <button id="closeSidebar" class="lg:hidden"><i class="bi bi-x-lg"></i></button>
+            </div>
+
+            <nav class="flex-1 p-4 space-y-2 text-sm">
+                <a href="javascript:void(0)" onclick="showSection('admin-dash')"
+                    class="nav-link block px-4 py-3 rounded-xl bg-[#D6BCFA] font-semibold transition-all">
+                    <i class="bi bi-speedometer2 mr-2"></i> Admin Overview
+                </a>
+                <a href="javascript:void(0)" onclick="showSection('manage-students')"
+                    class="nav-link block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition-all">
+                    <i class="bi bi-people-fill mr-2"></i> Manage Students
+                </a>
+                <a href="javascript:void(0)" onclick="showSection('finance')"
+                    class="nav-link block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition-all">
+                    <i class="bi bi-cash-stack mr-2"></i> Financial Reports
+                </a>
+                <a href="javascript:void(0)" onclick="showSection('studio-logs')"
+                    class="nav-link block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition-all">
+                    <i class="bi bi-building-fill-check mr-2"></i> Studio Allocation
+                </a>
+                <a href="login.html" class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] mt-10">
+                    <i class="bi bi-box-arrow-left mr-2"></i> Logout
+                </a>
+            </nav>
+
+            <div class="lg:hidden px-4 pb-4 space-y-2">
+                <button id="themeBtnMobile"
+                    class="w-full flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition">
+                    <i id="themeIconMobile" class="bi bi-moon-fill"></i>
+                    Dark / Light Mode
+                </button>
+                <button id="rtlBtnMobile"
+                    class="w-full flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition">
+                    <i class="bi bi-arrow-left-right"></i>
+                    RTL Mode
+                </button>
+            </div>
+
+             <div class="p-5 border-t border-[#4B008220] flex items-center gap-3">
+                <img src="images/team1.avif"
+                    class="w-10 h-10 rounded-full border-2 border-[#4B0082] object-cover">
+                <div>
+                    <p class="font-semibold text-sm">Anushya</p>
+                    <p class="text-xs text-[#4B008280]">Dance Coach</p>
+                </div>
+            </div>
+        </aside>
+
+        <div class="flex-1 flex flex-col overflow-hidden">
+            
+            <header class="bg-white dark:bg-[#1a1a2e] shadow px-6 py-4 flex justify-between items-center z-10">
+                <div class="flex items-center justify-between w-full lg:w-auto">
+                    <h1 id="page-title" class="text-xl font-bold text-[#4B0082] dark:text-white">
+                        Admin 
+                    </h1>
+                    <button id="openSidebar" class="lg:hidden text-2xl text-[#4B0082] dark:text-white">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+
+                <div class="hidden lg:flex gap-3">
+                    <button id="themeBtnDesktop" class="px-3 py-2 rounded-lg border dark:text-white dark:border-gray-700">
+                        <i id="themeIconDesktop" class="bi bi-moon-fill"></i>
+                    </button>
+                    <button id="rtlBtnDesktop" class="px-3 py-2 rounded-lg border dark:text-white dark:border-gray-700">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                </div>
+            </header>
+
+            <main class="p-4 sm:p-6 overflow-y-auto bg-gray-50 dark:bg-[#0f0a1f] h-full">
+
+                <div id="section-admin-dash" class="content-section space-y-6">
+                    
+                    <div class="bg-gradient-to-r from-[#4B0082] to-[#9D4EDD] text-white p-8 rounded-3xl shadow-lg relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h2 class="text-3xl font-bold">Good Afternoon, Admin!</h2>
+                            <p class="opacity-90 mt-3 max-w-2xl text-sm leading-relaxed">
+                                Here is your daily summary for Groww Dance Academy. Registration numbers have surged by 12% this week, largely driven by the upcoming Spring Gala. Please ensure all instructors have logged their attendance for the morning sessions, as two reports are currently pending.
+                            </p>
+                        </div>
+                        <i class="bi bi-bar-chart-fill absolute right-4 -bottom-4 text-9xl opacity-10"></i>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="bg-white dark:bg-[#1a1a2e] p-5 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
+                            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">Total Revenue</p>
+                            <h3 class="text-2xl font-black text-green-600 mt-1 dark:text-green-400">₹4,20,500</h3>
+                            <p class="text-[10px] text-gray-500 mt-2">Target reached: 85% of monthly goal. Next billing cycle begins on the 1st.</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#1a1a2e] p-5 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
+                            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">Active Students</p>
+                            <h3 class="text-2xl font-black text-[#4B0082] dark:text-white mt-1">1,284</h3>
+                            <p class="text-[10px] text-gray-500 mt-2">Spanning across 42 active classes. 42 new registrations processed today.</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#1a1a2e] p-5 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
+                            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">Avg. Attendance</p>
+                            <h3 class="text-2xl font-black text-[#4B0082] dark:text-white mt-1">88%</h3>
+                            <div class="w-full bg-gray-100 dark:bg-gray-800 h-1.5 mt-2 rounded-full overflow-hidden">
+                                <div class="bg-[#4B0082] h-full w-[88%]"></div>
+                            </div>
+                            <p class="text-[10px] text-gray-500 mt-2">Overall academy health is strong. Keep monitoring Batch C.</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#1a1a2e] p-5 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
+                            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">Studio Load</p>
+                            <h3 class="text-2xl font-black text-orange-500 mt-1">High</h3>
+                            <p class="text-[10px] text-gray-500 mt-2">6 out of 6 Studios currently occupied. Maintenance scheduled for Room A tonight.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-white/5">
+                            <h3 class="font-bold text-[#4B0082] dark:text-white mb-2">Critical System Alerts</h3>
+                            <p class="text-xs text-gray-500 mb-4">Please address these automated notifications to ensure smooth operations for the instructors and students.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4 p-4 bg-red-50 dark:bg-red-900/10 rounded-xl border-l-4 border-red-500">
+                                    <i class="bi bi-exclamation-triangle-fill text-red-500 mt-1"></i>
+                                    <div>
+                                        <p class="text-sm font-bold text-red-700 dark:text-red-400">Pending Payment: Batch B</p>
+                                        <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">12 students haven't cleared March fees. Automated reminders have been sent 48 hours ago. Manual follow-up is recommended by the front desk.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4 p-4 bg-blue-50 dark:bg-blue-900/10 rounded-xl border-l-4 border-blue-500">
+                                    <i class="bi bi-info-circle-fill text-blue-500 mt-1"></i>
+                                    <div>
+                                        <p class="text-sm font-bold text-blue-700 dark:text-blue-400">New Instructor Application</p>
+                                        <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Rahul V. applied for Kathak Lead position. Resume and video portfolio have been uploaded to the management drive for review.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-white/5">
+                            <h3 class="font-bold text-[#4B0082] dark:text-white mb-2">Quick Actions</h3>
+                            <p class="text-xs text-gray-500 mb-4">Frequently used management tools are pinned below for rapid access.</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <button class="p-6 border-2 border-dashed border-[#4B008230] dark:border-white/20 hover:bg-[#E9D8FD] dark:hover:bg-gray-800 rounded-2xl flex flex-col items-center justify-center text-[#4B0082] dark:text-white transition-all group">
+                                    <i class="bi bi-person-plus text-3xl mb-2 group-hover:scale-110 transition-transform"></i>
+                                    <span class="text-sm font-bold">Add Student</span>
+                                </button>
+                                <button class="p-6 border-2 border-dashed border-[#4B008230] dark:border-white/20 hover:bg-[#E9D8FD] dark:hover:bg-gray-800 rounded-2xl flex flex-col items-center justify-center text-[#4B0082] dark:text-white transition-all group">
+                                    <i class="bi bi-calendar-plus text-3xl mb-2 group-hover:scale-110 transition-transform"></i>
+                                    <span class="text-sm font-bold">Create Class</span>
+                                </button>
+                                <button class="p-6 border-2 border-dashed border-[#4B008230] dark:border-white/20 hover:bg-[#E9D8FD] dark:hover:bg-gray-800 rounded-2xl flex flex-col items-center justify-center text-[#4B0082] dark:text-white transition-all group">
+                                    <i class="bi bi-megaphone text-3xl mb-2 group-hover:scale-110 transition-transform"></i>
+                                    <span class="text-sm font-bold">Broadcast SMS</span>
+                                </button>
+                                <button class="p-6 border-2 border-dashed border-[#4B008230] dark:border-white/20 hover:bg-[#E9D8FD] dark:hover:bg-gray-800 rounded-2xl flex flex-col items-center justify-center text-[#4B0082] dark:text-white transition-all group">
+                                    <i class="bi bi-file-earmark-spreadsheet text-3xl mb-2 group-hover:scale-110 transition-transform"></i>
+                                    <span class="text-sm font-bold">Export Logs</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="section-manage-students" class="content-section hidden space-y-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <h2 class="text-2xl font-bold text-[#4B0082] dark:text-white">Student Directory</h2>
+                            <p class="text-sm text-gray-500 mt-1">Manage enrollments, edit profiles, and view individual progression tracks across all active dance modules.</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <input type="text" placeholder="Search by name or ID..." class="px-4 py-2 rounded-xl border dark:bg-[#1a1a2e] dark:border-gray-700 text-sm focus:outline-none focus:border-[#4B0082] dark:text-white">
+                            <button class="bg-[#4B0082] text-white px-4 py-2 rounded-xl text-sm font-bold shadow-md hover:bg-[#390062] transition-all">Filter</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-[#1a1a2e] rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-white/5">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead class="bg-gray-50 dark:bg-gray-900/50 text-xs uppercase text-gray-400 font-bold border-b border-gray-200 dark:border-gray-800">
+                                    <tr>
+                                        <th class="px-6 py-4">Student Info</th>
+                                        <th class="px-6 py-4">Enrolled Course</th>
+                                        <th class="px-6 py-4">Fee Status</th>
+                                        <th class="px-6 py-4">Attendance</th>
+                                        <th class="px-6 py-4 text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm dark:text-white divide-y dark:divide-gray-800">
+                                    <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                                        <td class="px-6 py-4">
+                                            <p class="font-bold">Anjali Sharma</p>
+                                            <p class="text-xs text-gray-500">ID: STU-8892</p>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span class="bg-[#E9D8FD] text-[#4B0082] dark:bg-purple-900/30 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-semibold">Hip Hop</span>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span class="flex items-center gap-1 text-green-600"><i class="bi bi-check-circle-fill"></i> Paid</span>
+                                        </td>
+                                        <td class="px-6 py-4 font-bold">94%</td>
+                                        <td class="px-6 py-4 text-center">
+                                            <button class="text-blue-500 hover:text-blue-700 p-2"><i class="bi bi-pencil-square"></i></button>
+                                            <button class="text-red-500 hover:text-red-700 p-2"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                                        <td class="px-6 py-4">
+                                            <p class="font-bold">Karan Patel</p>
+                                            <p class="text-xs text-gray-500">ID: STU-8893</p>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-semibold">Contemporary</span>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span class="flex items-center gap-1 text-red-500"><i class="bi bi-x-circle-fill"></i> Overdue</span>
+                                        </td>
+                                        <td class="px-6 py-4 font-bold">72%</td>
+                                        <td class="px-6 py-4 text-center">
+                                            <button class="text-blue-500 hover:text-blue-700 p-2"><i class="bi bi-pencil-square"></i></button>
+                                            <button class="text-red-500 hover:text-red-700 p-2"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                                        <td class="px-6 py-4">
+                                            <p class="font-bold">Priya Desai</p>
+                                            <p class="text-xs text-gray-500">ID: STU-8894</p>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span class="bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300 px-3 py-1 rounded-full text-xs font-semibold">Ballet</span>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span class="flex items-center gap-1 text-green-600"><i class="bi bi-check-circle-fill"></i> Paid</span>
+                                        </td>
+                                        <td class="px-6 py-4 font-bold">100%</td>
+                                        <td class="px-6 py-4 text-center">
+                                            <button class="text-blue-500 hover:text-blue-700 p-2"><i class="bi bi-pencil-square"></i></button>
+                                            <button class="text-red-500 hover:text-red-700 p-2"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="section-finance" class="content-section hidden space-y-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#4B0082] dark:text-white">Financial Dashboard</h2>
+                        <p class="text-sm text-gray-500 mt-2 max-w-3xl">This module provides an overarching view of the academy's financial health. Track incoming tuition fees, view pending payments, and generate monthly expenditure reports for payroll and studio maintenance.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
+                            <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-4 border-b pb-2 dark:border-gray-800">Monthly Ledger - March</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">Total Collected</span>
+                                    <span class="font-bold text-green-600">₹4,20,500</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">Pending Dues</span>
+                                    <span class="font-bold text-red-500">₹45,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">Instructor Payouts</span>
+                                    <span class="font-bold dark:text-white">-₹1,80,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">Facility Maintenance</span>
+                                    <span class="font-bold dark:text-white">-₹35,000</span>
+                                </div>
+                                <div class="border-t dark:border-gray-800 pt-3 flex justify-between items-center">
+                                    <span class="text-sm font-bold text-[#4B0082] dark:text-purple-300">Net Retained</span>
+                                    <span class="font-bold text-xl dark:text-white">₹1,60,500</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
+                            <h3 class="font-bold text-gray-700 dark:text-gray-300 mb-4 border-b pb-2 dark:border-gray-800">Recent Transactions</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-sm font-bold dark:text-white">Sonia K. (Instructor Fee)</p>
+                                        <p class="text-[10px] text-gray-500">March 12, 2026 • Transfer</p>
+                                    </div>
+                                    <span class="font-bold text-red-500 text-sm">-₹25,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-sm font-bold dark:text-white">Anjali Sharma (Tuition)</p>
+                                        <p class="text-[10px] text-gray-500">March 11, 2026 • UPI</p>
+                                    </div>
+                                    <span class="font-bold text-green-600 text-sm">+₹3,500</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-sm font-bold dark:text-white">Studio B Mirror Repair</p>
+                                        <p class="text-[10px] text-gray-500">March 10, 2026 • Card</p>
+                                    </div>
+                                    <span class="font-bold text-red-500 text-sm">-₹8,500</span>
+                                </div>
+                            </div>
+                            <button class="w-full mt-6 py-2 border border-[#4B0082] text-[#4B0082] dark:text-[#D6BCFA] dark:border-[#D6BCFA] rounded-xl text-xs font-bold hover:bg-[#E9D8FD] dark:hover:bg-purple-900/20 transition">View Complete Statement</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="section-studio-logs" class="content-section hidden space-y-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#4B0082] dark:text-white">Studio Allocation & Timetable</h2>
+                        <p class="text-sm text-gray-500 mt-2 max-w-3xl">Monitor physical infrastructure. Ensure that there are no overlapping classes and that instructors have adequate time between sessions to prepare the studio floors.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border-t-4 border-green-500">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold dark:text-white">Studio A</h3>
+                                <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-full uppercase">Occupied</span>
+                            </div>
+                            <p class="text-sm font-bold text-[#4B0082] dark:text-purple-300">Hip Hop Advanced</p>
+                            <p class="text-xs text-gray-500 mt-1"><i class="bi bi-person-badge"></i> Inst: Sonia K.</p>
+                            <p class="text-xs text-gray-500 mt-1"><i class="bi bi-clock"></i> 16:00 - 18:00</p>
+                            <p class="text-xs text-gray-500 mt-1"><i class="bi bi-people"></i> 24 Students present</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border-t-4 border-blue-500">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold dark:text-white">Studio B</h3>
+                                <span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-1 rounded-full uppercase">Preparing</span>
+                            </div>
+                            <p class="text-sm font-bold text-[#4B0082] dark:text-purple-300">Contemporary Fundamentals</p>
+                            <p class="text-xs text-gray-500 mt-1"><i class="bi bi-person-badge"></i> Inst: Rahul Singh</p>
+                            <p class="text-xs text-gray-500 mt-1"><i class="bi bi-clock"></i> 17:30 - 19:00</p>
+                            <p class="text-xs text-gray-500 mt-1"><i class="bi bi-people"></i> 18 Students enrolled</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border-t-4 border-gray-300">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold dark:text-white">Studio C</h3>
+                                <span class="bg-gray-100 text-gray-500 text-[10px] font-bold px-2 py-1 rounded-full uppercase">Available</span>
+                            </div>
+                            <p class="text-sm font-bold text-gray-400">No active sessions</p>
+                            <p class="text-xs text-gray-400 mt-1">Next class scheduled at 19:00</p>
+                            <button class="mt-4 text-xs font-bold text-[#4B0082] dark:text-purple-300 border border-[#4B0082] dark:border-purple-300 rounded px-3 py-1 hover:bg-[#E9D8FD] dark:hover:bg-purple-900/30">Book Slot</button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        /* Section Switching Logic */
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            document.getElementById('section-' + sectionId).classList.remove('hidden');
+
+            const titles = {
+                'admin-dash': 'Admin Overview',
+                'manage-students': 'Manage Students',
+                'finance': 'Financial Reports',
+                'studio-logs': 'Studio Allocation'
+            };
+            document.getElementById('page-title').innerText = titles[sectionId];
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('bg-[#D6BCFA]', 'font-semibold');
+                link.classList.add('hover:bg-[#D6BCFA]');
+            });
+
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('bg-[#D6BCFA]', 'font-semibold');
+            }
+
+            if (window.innerWidth < 1024) {
+                closeSidebar();
+            }
+        }
+
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+
+        function openSidebar() {
+            sidebar.classList.remove("-translate-x-full");
+            overlay.classList.remove("hidden");
+        }
+
+        function closeSidebar() {
+            sidebar.classList.add("-translate-x-full");
+            overlay.classList.add("hidden");
+        }
+
+        document.getElementById("openSidebar").onclick = openSidebar;
+        document.getElementById("closeSidebar").onclick = closeSidebar;
+        overlay.onclick = closeSidebar;
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            document.documentElement.classList.toggle("dark");
+            const isDark = document.documentElement.classList.contains("dark");
+            const iconClass = isDark ? "bi bi-sun-fill" : "bi bi-moon-fill";
+            document.getElementById("themeIconDesktop").className = iconClass;
+            document.getElementById("themeIconMobile").className = iconClass;
+        }
+
+        document.getElementById("themeBtnDesktop").onclick = toggleTheme;
+        document.getElementById("themeBtnMobile").onclick = toggleTheme;
+
+        // RTL Toggle Logic
+        function toggleRTL() {
+            document.documentElement.dir = document.documentElement.dir === "rtl" ? "ltr" : "rtl";
+        }
+
+        document.getElementById("rtlBtnDesktop").onclick = toggleRTL;
+        document.getElementById("rtlBtnMobile").onclick = toggleRTL;
 
     </script>
 

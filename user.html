@@ -4,15 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User - Groww Dance</title>
+    <title>User - Rhythm Hub</title>
     <link rel="icon" href="images/logo.jpeg">
- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <script>
-        tailwind.config = { darkMode: 'class' }
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+                    },
+                },
+            },
+        }
     </script>
 </head>
 
@@ -20,163 +29,367 @@
 
     <div class="flex h-screen overflow-hidden">
 
-        <!-- OVERLAY -->
         <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-40 lg:hidden"></div>
 
-        <!-- SIDEBAR -->
-        <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-72 bg-[#E9D8FD] text-[#4B0082]
-flex flex-col transform -translate-x-full lg:translate-x-0
-transition-transform duration-300 z-50">
+        <aside id="sidebar"
+            class="fixed lg:static inset-y-0 left-0 w-72 bg-[#E9D8FD] text-[#4B0082] flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50">
 
             <div class="p-6 text-2xl font-bold flex justify-between">
                 <h1 class="text-2xl font-bold text-[#4B0082]">
                     <a href="index.html" class="transition">
-                        Groww Dance
+                        Rhythm Hub
                     </a>
                 </h1>
-                <button id="closeSidebar" class="lg:hidden">
-                    <i class="bi bi-x-lg"></i>
-                </button>
+                <button id="closeSidebar" class="lg:hidden"><i class="bi bi-x-lg"></i></button>
             </div>
 
             <nav class="flex-1 p-4 space-y-2 text-sm">
-
-                <a class="block px-4 py-3 rounded-xl bg-[#D6BCFA] font-semibold">
+                <a href="javascript:void(0)" onclick="showSection('dashboard')"
+                    class="nav-link block px-4 py-3 rounded-xl bg-[#D6BCFA] font-semibold transition-all">
                     <i class="bi bi-house-fill mr-2"></i> Dashboard
                 </a>
-
-                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA]">
+                <a href="javascript:void(0)" onclick="showSection('classes')"
+                    class="nav-link block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition-all">
                     <i class="bi bi-book-fill mr-2"></i> My Classes
                 </a>
-
-                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA]">
+                <a href="javascript:void(0)" onclick="showSection('attendance')"
+                    class="nav-link block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition-all">
                     <i class="bi bi-calendar-check-fill mr-2"></i> My Attendance
                 </a>
-
-                <a class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA]">
+                <a href="javascript:void(0)" onclick="showSection('achievements')"
+                    class="nav-link block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] transition-all">
                     <i class="bi bi-trophy-fill mr-2"></i> Achievements
                 </a>
-
-                <a href="login.html" class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA]">
+                <a href="login.html" class="block px-4 py-3 rounded-xl hover:bg-[#D6BCFA] mt-10">
                     <i class="bi bi-box-arrow-left mr-2"></i> Logout
                 </a>
-
             </nav>
+            <!-- Mobile Settings -->
+            <div class="lg:hidden px-4 pb-4 space-y-2">
 
-            <div class="p-5 border-t border-[#4B008220] flex items-center gap-3">
-                <img src="images/test3.avif" class="w-12 h-12 rounded-full border-2 border-[#4B0082]">
-                <div>
-                    <p class="font-semibold text-sm">Anjali</p>
-                    <p class="text-xs text-[#4B008280]">Student</p>
-                </div>
-            </div>
-
-        </aside>
-
-        <!-- MAIN -->
-        <div class="flex-1 flex flex-col">
-
-            <!-- TOPBAR -->
-            <header class="bg-white dark:bg-[#1a1a2e] shadow px-6 py-4 flex justify-between items-center">
-
-                <button id="openSidebar" class="lg:hidden text-2xl text-[#4B0082] dark:text-white">
-                    <i class="bi bi-list"></i>
+                <button id="themeBtnMobile"
+                    class="w-full flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-[#D6BCFA]  transition">
+                    <i id="themeIconMobile" class="bi bi-moon-fill"></i>
+                    Dark / Light Mode
                 </button>
 
-                <h1 class="text-xl font-bold text-[#4B0082] dark:text-white">
-                    User
-                </h1>
+                <button id="rtlBtnMobile"
+                    class="w-full flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-[#D6BCFA]  transition">
+                    <i class="bi bi-arrow-left-right"></i>
+                    RTL Mode
+                </button>
 
-                <div class="flex gap-3">
+            </div>
 
-                    <!-- Theme -->
-                    <button id="themeBtn" class="px-3 py-2 rounded-lg border text-[#4B0082] dark:text-white">
-                        <i id="themeIcon" class="bi bi-moon-fill"></i>
+            <div class="p-5 border-t border-[#4B008220] flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
+                    class="w-10 h-10 rounded-full border-2 border-[#4B0082] object-cover">
+                <div>
+                    <p class="font-semibold text-sm">Anjali</p>
+                    <p class="text-xs text-[#4B008280]">Student Member</p>
+                </div>
+            </div>
+        </aside>
+
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <header class="bg-white dark:bg-[#1a1a2e] shadow px-6 py-4 flex justify-between items-center z-10">
+                <div class="flex items-center justify-between w-full lg:w-auto">
+                    <h1 id="page-title" class="text-xl font-bold text-[#4B0082] dark:text-white">
+                        My Dashboard
+                    </h1>
+
+                    <button id="openSidebar" class="lg:hidden text-2xl text-[#4B0082] dark:text-white">
+                        <i class="bi bi-list"></i>
                     </button>
-
-                    <!-- RTL -->
-                    <button id="rtlBtn" class="px-3 py-2 rounded-lg border text-[#4B0082] dark:text-white">
-                        <i class="bi bi-arrow-left-right"></i>
-                    </button>
-
                 </div>
 
+                <div class="hidden lg:flex gap-3">
+                    <button id="themeBtnDesktop" class="px-3 py-2 rounded-lg border dark:text-white"><i
+                            id="themeIconDesktop" class="bi bi-moon-fill"></i></button>
+                    <button id="rtlBtnDesktop" class="px-3 py-2 rounded-lg border dark:text-white"><i
+                            class="bi bi-arrow-left-right"></i></button>
+                </div>
             </header>
 
-            <!-- CONTENT -->
-            <main class="p-6 space-y-8 overflow-y-auto">
+            <main class="p-4 sm:p-6 overflow-y-auto bg-gray-50 dark:bg-[#0f0a1f] h-full">
 
-                <!-- WELCOME -->
-                <div class="bg-gradient-to-r from-[#4B0082] to-[#9D4EDD]
-text-white p-6 rounded-2xl shadow">
-                    <h2 class="text-2xl font-bold">Welcome Back, Anjali <i class="bi bi-balloon-heart-fill"></i></h2>
-                    <p>Track Classes • Attendance • Awards • Progress</p>
-                </div>
-
-                <!-- STATS -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
-                        <i class="bi bi-book-fill text-2xl text-[#4B0082]"></i>
-                        <h2 class="text-3xl font-bold dark:text-white mt-3">4</h2>
-                        <p class="dark:text-white text-sm">Enrolled Classes</p>
+                <div id="section-dashboard" class="content-section space-y-6">
+                    <div
+                        class="bg-gradient-to-r from-[#4B0082] to-[#9D4EDD] text-white p-8 rounded-3xl shadow-lg relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h2 class="text-3xl font-bold">Welcome Back, Anjali! 👋</h2>
+                            <p class="opacity-90 mt-2 max-w-xl">"Great dancers are not great because of their technique,
+                                they are great because of their passion." You've shown incredible consistency this
+                                month. Your next Hip-Hop session starts in 3 hours in Studio B.</p>
+                            <div class="mt-6 flex flex-wrap gap-4">
+                                <div class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl text-xs">
+                                    <span class="block opacity-70">Current Level</span>
+                                    <span class="font-bold">Intermediate II</span>
+                                </div>
+                                <div class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl text-xs">
+                                    <span class="block opacity-70">Studio Points</span>
+                                    <span class="font-bold">450 / 1000</span>
+                                </div>
+                                <div class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl text-xs">
+                                    <span class="block opacity-70">Next Event</span>
+                                    <span class="font-bold">Spring Gala (April 12)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="bi bi-stars absolute right-0 bottom-0 text-9xl opacity-10"></i>
                     </div>
-
-                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
-                        <i class="bi bi-calendar-check-fill text-2xl text-[#4B0082]"></i>
-                        <h2 class="text-3xl font-bold dark:text-white mt-3">92%</h2>
-                        <p class="dark:text-white text-sm">Attendance Rate</p>
-                    </div>
-
-                    <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
-                        <i class="bi bi-trophy-fill text-2xl text-[#4B0082]"></i>
-                        <h2 class="text-3xl font-bold dark:text-white mt-3">5</h2>
-                        <p class="dark:text-white text-sm">Total Awards</p>
-                    </div>
-
-                </div>
-                <!-- ATTENDANCE PROGRESS -->
-                <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
-                    <h2 class="text-lg font-bold mb-6 text-[#4B0082] dark:text-white"> My Attendance Progress </h2>
-                    <div class="w-full bg-gray-200 dark:bg-gray-700 h-3 rounded">
-                        <div class="bg-[#4B0082] h-3 rounded" style="width:92%"></div>
-                    </div>
-                    <p class="text-sm mt-2 dark:text-white">Excellent Performance</p>
-                </div>
-                <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
-                    <h2 class="text-lg font-bold mb-4 text-[#4B0082] dark:text-white"> Upcoming Class </h2>
-                    <div class="flex justify-between dark:text-white"> <span>Contemporary Dance</span> <span>Today 6:00
-                            PM</span> </div>
-                </div>
-                <!-- ================= ACHIEVEMENTS ================= -->
-                <div class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow">
-
-                    <h2 class="text-lg font-bold mb-6 text-[#4B0082] dark:text-white">
-                        My Achievements
-                    </h2>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                        <div class="text-center border p-4 rounded-xl border-[#4B008220]">
-                            <i class="bi bi-trophy-fill text-3xl text-yellow-500"></i>
-                            <h3 class="font-semibold mt-3 dark:text-white">Best Performer</h3>
-                            <p class="text-sm text-gray-500 dark:text-gray-300">Annual Festival</p>
+                        <div
+                            class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
+                            <i class="bi bi-lightning-charge-fill text-yellow-500 text-2xl"></i>
+                            <h3 class="text-2xl font-bold mt-2 dark:text-white">92%</h3>
+                            <p class="text-gray-500 text-sm">Course Completion</p>
+                            <p class="text-[10px] text-green-500 mt-2 font-medium">+5% from last week</p>
                         </div>
-
-                        <div class="text-center border p-4 rounded-xl border-[#4B008220]">
-                            <i class="bi bi-star-fill text-3xl text-[#4B0082]"></i>
-                            <h3 class="font-semibold mt-3 dark:text-white">Excellence Award</h3>
-                            <p class="text-sm text-gray-500 dark:text-gray-300">Studio Level</p>
+                        <div
+                            class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
+                            <i class="bi bi-fire text-red-500 text-2xl"></i>
+                            <h3 class="text-2xl font-bold mt-2 dark:text-white">12 Days</h3>
+                            <p class="text-gray-500 text-sm">Dancing Streak</p>
+                            <p class="text-[10px] text-gray-400 mt-2 font-medium">Personal Best: 15 Days</p>
                         </div>
-
-                        <div class="text-center border p-4 rounded-xl border-[#4B008220]">
-                            <i class="bi bi-award-fill text-3xl text-green-600"></i>
-                            <h3 class="font-semibold mt-3 dark:text-white">Participation</h3>
-                            <p class="text-sm text-gray-500 dark:text-gray-300">Competition Event</p>
+                        <div
+                            class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
+                            <i class="bi bi-clock-history text-blue-500 text-2xl"></i>
+                            <h3 class="text-2xl font-bold mt-2 dark:text-white">48h</h3>
+                            <p class="text-gray-500 text-sm">Practice Time</p>
+                            <p class="text-[10px] text-gray-400 mt-2 font-medium">Recorded in Studio Sessions</p>
                         </div>
-
                     </div>
 
+                    <div
+                        class="bg-white dark:bg-[#1a1a2e] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
+                        <h3 class="font-bold dark:text-white mb-4">Latest Academy News</h3>
+                        <div class="space-y-4">
+                            <div
+                                class="flex items-start gap-4 p-3 hover:bg-gray-50 dark:hover:bg-white/5 rounded-xl transition-all">
+                                <div class="bg-purple-100 dark:bg-purple-900/30 p-2 rounded-lg text-purple-600">
+                                    <i class="bi bi-megaphone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold dark:text-white">Annual Workshop Registrations Open
+                                    </h4>
+                                    <p class="text-xs text-gray-500 mt-1">Sign up for the 3-day Masterclass with
+                                        international choreographers starting next Monday.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="section-classes" class="content-section hidden space-y-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <h2 class="text-2xl font-bold text-[#4B0082] dark:text-white">Active Curriculum</h2>
+                            <p class="text-sm text-gray-500">Track your progress and access your study materials.</p>
+                        </div>
+                        <button
+                            class="bg-[#4B0082] text-white px-6 py-2 rounded-xl text-sm font-semibold shadow-md hover:bg-[#390062] transition-all">+
+                            Explore More Genres</button>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div
+                            class="bg-white dark:bg-[#1a1a2e] overflow-hidden rounded-3xl shadow-sm border border-gray-100 dark:border-white/5 hover:shadow-lg transition-all">
+                            <div
+                                class="h-40 bg-gradient-to-br from-[#E9D8FD] to-[#D6BCFA] flex flex-col items-center justify-center text-[#4B0082]">
+                                <i class="bi bi-play-circle-fill text-5xl"></i>
+                                <span class="text-xs font-bold mt-2 uppercase tracking-widest">Video Lesson</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-bold text-lg dark:text-white">Contemporary Fundamentals</h3>
+                                <p class="text-xs text-gray-500 mt-1 mb-4 leading-relaxed">Focusing on floorwork,
+                                    release technique, and emotional storytelling. This module covers fluid transitions
+                                    and weight distribution.</p>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <img src="images/team2.avif" class="w-8 h-8 rounded-full border border-purple-200">
+                                    <p class="text-xs font-medium dark:text-gray-300">Instructor: Rahul Singh</p>
+                                </div>
+                                <div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-[#4B0082] h-2 rounded-full w-[75%]"></div>
+                                </div>
+                                <div class="flex justify-between mt-2">
+                                    <p class="text-[10px] text-gray-400">12 of 16 Lessons Watched</p>
+                                    <p class="text-[10px] font-bold text-[#4B0082] dark:text-[#D6BCFA]">75%</p>
+                                </div>
+                                <button
+                                    class="w-full mt-6 py-3 bg-[#4B0082] text-white rounded-xl text-xs font-bold">Resume
+                                    Learning</button>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white dark:bg-[#1a1a2e] overflow-hidden rounded-3xl shadow-sm border border-gray-100 dark:border-white/5 hover:shadow-lg transition-all">
+                            <div
+                                class="h-40 bg-gradient-to-br from-[#D6BCFA] to-[#B794F4] flex flex-col items-center justify-center text-[#4B0082]">
+                                <i class="bi bi-play-circle-fill text-5xl"></i>
+                                <span class="text-xs font-bold mt-2 uppercase tracking-widest">Live Session
+                                    Access</span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-bold text-lg dark:text-white">Hip Hop Advanced</h3>
+                                <p class="text-xs text-gray-500 mt-1 mb-4 leading-relaxed">Advanced isolation, popping,
+                                    and locking techniques. Includes high-intensity choreography to urban beats and
+                                    freestyle drills.</p>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <img src="images/team1.avif" class="w-8 h-8 rounded-full border border-purple-200">
+                                    <p class="text-xs font-medium dark:text-gray-300">Instructor: Sonia K.</p>
+                                </div>
+                                <div class="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-[#4B0082] h-2 rounded-full w-[40%]"></div>
+                                </div>
+                                <div class="flex justify-between mt-2">
+                                    <p class="text-[10px] text-gray-400">6 of 15 Lessons Watched</p>
+                                    <p class="text-[10px] font-bold text-[#4B0082] dark:text-[#D6BCFA]">40%</p>
+                                </div>
+                                <button
+                                    class="w-full mt-6 py-3 border-2 border-[#4B0082] text-[#4B0082] dark:text-[#D6BCFA] dark:border-[#D6BCFA] rounded-xl text-xs font-bold">Access
+                                    Resources</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="section-attendance" class="content-section hidden space-y-6">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold text-[#4B0082] dark:text-white">Attendance History</h2>
+                        <div class="flex gap-2">
+                            <select
+                                class="text-xs p-2 rounded-lg border dark:bg-[#1a1a2e] dark:border-gray-800 dark:text-white">
+                                <option>March 2026</option>
+                                <option>February 2026</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#E9D8FD] dark:bg-[#1a1a2e] p-6 rounded-2xl border-l-8 border-[#4B0082]">
+                        <p class="text-sm font-bold text-[#4B0082] dark:text-white">Overview Note:</p>
+                        <p class="text-xs text-[#4B0082] dark:text-gray-400 mt-1">You must maintain an 85% attendance
+                            rate to qualify for the certification exam. Currently, you are at <span
+                                class="font-bold">94%</span>. Keep it up!</p>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-[#1a1a2e] rounded-3xl shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-50 dark:bg-gray-900/50">
+                                    <tr class="text-gray-400 text-xs uppercase font-bold tracking-wider">
+                                        <th class="px-6 py-4">Date</th>
+                                        <th class="px-6 py-4">Class Category</th>
+                                        <th class="px-6 py-4">Session Type</th>
+                                        <th class="px-6 py-4">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm dark:text-white divide-y dark:divide-gray-800">
+                                    <tr>
+                                        <td class="px-6 py-4 font-medium">March 12, 2026</td>
+                                        <td class="px-6 py-4">Hip Hop Advanced</td>
+                                        <td class="px-6 py-4">In-Person</td>
+                                        <td class="px-6 py-4"><span
+                                                class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-bold">Present</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-medium">March 10, 2026</td>
+                                        <td class="px-6 py-4">Contemporary Dance</td>
+                                        <td class="px-6 py-4">In-Person</td>
+                                        <td class="px-6 py-4"><span
+                                                class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-bold">Present</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-medium">March 08, 2026</td>
+                                        <td class="px-6 py-4">Ballet Intro</td>
+                                        <td class="px-6 py-4">Workshop</td>
+                                        <td class="px-6 py-4"><span
+                                                class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-[10px] font-bold">Absent</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-medium">March 05, 2026</td>
+                                        <td class="px-6 py-4">Hip Hop Advanced</td>
+                                        <td class="px-6 py-4">In-Person</td>
+                                        <td class="px-6 py-4"><span
+                                                class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-bold">Present</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="section-achievements" class="content-section hidden space-y-8">
+                    <div class="text-center max-w-2xl mx-auto">
+                        <h2 class="text-3xl font-bold text-[#4B0082] dark:text-white">Milestones & Recognition</h2>
+                        <p class="text-gray-500 mt-2">Every drop of sweat is a step closer to mastery. Here is a log of
+                            your growth at Groww Dance Academy.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div
+                            class="bg-white dark:bg-[#1a1a2e] p-8 rounded-3xl text-center border-b-4 border-yellow-400 shadow-sm relative group hover:scale-105 transition-all">
+                            <div
+                                class="bg-yellow-50 dark:bg-yellow-900/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="bi bi-award text-4xl text-yellow-500"></i>
+                            </div>
+                            <h3 class="font-bold text-lg dark:text-white">Star Dancer</h3>
+                            <p class="text-xs text-gray-500 mt-2">Earned for performing a solo during the February
+                                Showcase with zero errors.</p>
+                            <span
+                                class="inline-block mt-4 text-[10px] font-bold text-yellow-600 uppercase bg-yellow-100 px-3 py-1 rounded-full">Awarded:
+                                Feb 28</span>
+                        </div>
+
+                        <div
+                            class="bg-white dark:bg-[#1a1a2e] p-8 rounded-3xl text-center border-b-4 border-purple-400 shadow-sm group hover:scale-105 transition-all">
+                            <div
+                                class="bg-purple-50 dark:bg-purple-900/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="bi bi-lightning text-4xl text-purple-500"></i>
+                            </div>
+                            <h3 class="font-bold text-lg dark:text-white">Fast Learner</h3>
+                            <p class="text-xs text-gray-500 mt-2">Awarded for completing the Intermediate Level I
+                                syllabus 2 weeks ahead of schedule.</p>
+                            <span
+                                class="inline-block mt-4 text-[10px] font-bold text-purple-600 uppercase bg-purple-100 px-3 py-1 rounded-full">Awarded:
+                                Jan 15</span>
+                        </div>
+
+                        <div
+                            class="bg-white dark:bg-[#1a1a2e] p-8 rounded-3xl text-center border-b-4 border-blue-400 shadow-sm group hover:scale-105 transition-all">
+                            <div
+                                class="bg-blue-50 dark:bg-blue-900/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="bi bi-people text-4xl text-blue-500"></i>
+                            </div>
+                            <h3 class="font-bold text-lg dark:text-white">Team Player</h3>
+                            <p class="text-xs text-gray-500 mt-2">Nominated by peers for demonstrating excellent
+                                cooperation in group choreography.</p>
+                            <span
+                                class="inline-block mt-4 text-[10px] font-bold text-blue-600 uppercase bg-blue-100 px-3 py-1 rounded-full">Awarded:
+                                Mar 01</span>
+                        </div>
+
+                        <div
+                            class="bg-white dark:bg-[#1a1a2e] p-8 rounded-3xl text-center border-b-4 border-gray-300 shadow-sm opacity-50">
+                            <div
+                                class="bg-gray-50 dark:bg-gray-800 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="bi bi-lock text-4xl text-gray-400"></i>
+                            </div>
+                            <h3 class="font-bold text-lg dark:text-white">Elite Performer</h3>
+                            <p class="text-xs text-gray-500 mt-2">Unlock this by participating in a national-level dance
+                                competition.</p>
+                            <span
+                                class="inline-block mt-4 text-[10px] font-bold text-gray-400 uppercase bg-gray-100 px-3 py-1 rounded-full">Locked
+                                Milestone</span>
+                        </div>
+                    </div>
                 </div>
 
             </main>
@@ -184,58 +397,73 @@ text-white p-6 rounded-2xl shadow">
     </div>
 
     <script>
+        /* Section Switching Logic */
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
 
-        /* Sidebar */
+            document.getElementById('section-' + sectionId).classList.remove('hidden');
+
+            const titles = {
+                'dashboard': 'Dashboard',
+                'classes': 'My Classes',
+                'attendance': 'My Attendance',
+                'achievements': 'Achievements'
+            };
+            document.getElementById('page-title').innerText = titles[sectionId];
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('bg-[#D6BCFA]', 'font-semibold');
+                link.classList.add('hover:bg-[#D6BCFA]');
+            });
+
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('bg-[#D6BCFA]', 'font-semibold');
+            }
+
+            if (window.innerWidth < 1024) {
+                closeSidebar();
+            }
+        }
+
         const sidebar = document.getElementById("sidebar");
         const overlay = document.getElementById("overlay");
 
-        document.getElementById("openSidebar").onclick = () => {
+        function openSidebar() {
             sidebar.classList.remove("-translate-x-full");
             overlay.classList.remove("hidden");
-        };
+        }
 
-        document.getElementById("closeSidebar").onclick = () => {
+        function closeSidebar() {
             sidebar.classList.add("-translate-x-full");
             overlay.classList.add("hidden");
-        };
+        }
 
-        overlay.onclick = () => {
-            sidebar.classList.add("-translate-x-full");
-            overlay.classList.add("hidden");
-        };
+        document.getElementById("openSidebar").onclick = openSidebar;
+        document.getElementById("closeSidebar").onclick = closeSidebar;
+        overlay.onclick = closeSidebar;
 
-        /* Theme */
-        const themeBtn = document.getElementById("themeBtn");
-        const themeIcon = document.getElementById("themeIcon");
-
-        themeBtn.onclick = () => {
+        // Theme Toggle Logic
+        function toggleTheme() {
             document.documentElement.classList.toggle("dark");
-            themeIcon.className =
-                document.documentElement.classList.contains("dark")
-                    ? "bi bi-sun-fill"
-                    : "bi bi-moon-fill";
-        };
+            const isDark = document.documentElement.classList.contains("dark");
+            const iconClass = isDark ? "bi bi-sun-fill" : "bi bi-moon-fill";
+            document.getElementById("themeIconDesktop").className = iconClass;
+            document.getElementById("themeIconMobile").className = iconClass;
+        }
 
-        /* RTL */
-        document.getElementById("rtlBtn").onclick = () => {
-            document.documentElement.dir =
-                document.documentElement.dir === "rtl" ? "ltr" : "rtl";
-        };
+        document.getElementById("themeBtnDesktop").onclick = toggleTheme;
+        document.getElementById("themeBtnMobile").onclick = toggleTheme;
 
-        
+        // RTL Toggle Logic (FIXED)
+        function toggleRTL() {
+            document.documentElement.dir = document.documentElement.dir === "rtl" ? "ltr" : "rtl";
+        }
 
-tailwind.config = {
-    darkMode: 'class',
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
-            },
-        },
-    },
-}
-
-
+        // ADD THESE LINES TO FIX YOUR RTL BUTTONS
+        document.getElementById("rtlBtnDesktop").onclick = toggleRTL;
+        document.getElementById("rtlBtnMobile").onclick = toggleRTL;
 
     </script>
 
